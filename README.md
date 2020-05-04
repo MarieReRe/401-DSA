@@ -13,5 +13,5 @@ Once you’ve achieved a working solution, implement the same feature with a dif
 Matt and I approached reversinge this array as taking a test array and inputing the last number (or input) of that array into the first available index of a new "reverse" array.
 This approach would be of linear time complexity which is O(n). This is because the time this function takes to run would increase proportionally to the amount of data the function contains. 
 ### Solution: 
-![White Boarding Solution]()
+![White Boarding Solution](https://github.com/mrsantons/401-DSA/blob/master/assets/reverseArrayWhiteboard.jpg)
 
