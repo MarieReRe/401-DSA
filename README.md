@@ -2,7 +2,9 @@
 
 ## Day 1 Challenge: Reverse an Array
 For this challenge we are tasked with taking an array and reversing that input without altering the original array or using the built in method of Array.Reverse(). 
-
+#### Challenge Start: 1:15pm
+#### Challenge End: 2:45pm
+#### Total Time: 2.5 hours
 ### Challenge
 Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
