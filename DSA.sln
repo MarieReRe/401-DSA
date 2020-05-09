@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenges", "Challenges\Challenges.csproj", "{3BBA3BE4-4B3D-4C5C-83A5-8DB249A875C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengesTest", "ChallengesTest\ChallengesTest.csproj", "{BC43ADA5-3354-44A6-8FC1-E20EF6639FE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChallengesTest", "ChallengesTest\ChallengesTest.csproj", "{BC43ADA5-3354-44A6-8FC1-E20EF6639FE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{727F0EAB-F1FE-4ED9-BAC0-1612029F2F1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresTests", "DataStructuresTests\DataStructuresTests.csproj", "{67AB45D0-3820-4214-BF56-B8F73E17009A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{BC43ADA5-3354-44A6-8FC1-E20EF6639FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC43ADA5-3354-44A6-8FC1-E20EF6639FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC43ADA5-3354-44A6-8FC1-E20EF6639FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{727F0EAB-F1FE-4ED9-BAC0-1612029F2F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727F0EAB-F1FE-4ED9-BAC0-1612029F2F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727F0EAB-F1FE-4ED9-BAC0-1612029F2F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727F0EAB-F1FE-4ED9-BAC0-1612029F2F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67AB45D0-3820-4214-BF56-B8F73E17009A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67AB45D0-3820-4214-BF56-B8F73E17009A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67AB45D0-3820-4214-BF56-B8F73E17009A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67AB45D0-3820-4214-BF56-B8F73E17009A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
