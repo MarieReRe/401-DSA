@@ -9,7 +9,7 @@ namespace DataStructuresTests
 
     /*                  Tests needed: 
             [x] 1. Can successfully instantiate an empty linked list
-            [] 2. Can properly insert into the linked list
+            [x] 2. Can properly insert into the linked list
             [] 3. The head property will properly point to the first node in the linked list
             [] 4. Can properly insert multiple nodes into the linked list
             [] 5. Will return true when finding a value within the linked list that exists
@@ -44,6 +44,19 @@ namespace DataStructuresTests
             Assert.Equal(19, insertToLinkedList.Head.Value);
 
 
+        }
+
+
+        [Fact]
+        public void HeadPropertyIsFirstNode()
+        {
+            // Arrange
+
+            //Act
+            LinkedList LinkedList = new LinkedList();
+
+            //Assert
+            Assert.Null(LinkedList.Head);
         }
     }
 }
