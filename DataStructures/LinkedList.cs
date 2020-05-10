@@ -51,20 +51,25 @@ namespace DataStructures
         /*                              INSERTION
          - Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
          */
-        public void Insert(int value)
+        public void Insert(int newNodeValue)
         {
-                    // instantiate new node
-                  Node newNode = new Node(value);
-
-            // Set value to the inputted data
-                 newNode.Value = value;
-            // Set the next to head
+            Node newNode = new Node(newNodeValue);
+            if (Head != null)
+            {
                 newNode.Next = Head;
+            }
+         
+            Head = newNode;
+            Current = newNode;
 
-            // set new node to the head
-                Head = newNode;
-            
         }
+
+
+
+
+
+
+
         /*                              INCLUDES
          - Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
          */
