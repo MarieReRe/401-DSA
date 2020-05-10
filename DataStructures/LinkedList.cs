@@ -40,12 +40,12 @@ namespace DataStructures
                 while (Current.Next != null)
                 {
                     Current = Current.Next;
-                    linkedListOutput += $" => {{{Current.Value}}}";
+                    linkedListOutput += $" -> {{{Current.Value}}}";
                 }
 
 
             }
-            return linkedListOutput;
+            return linkedListOutput + " -> NULL";
         }
 
         /*                              INSERTION
@@ -75,20 +75,32 @@ namespace DataStructures
          */
          public bool Includes(int value)
         {
-            if (Head == null)
+            try
             {
-                throw new Exception("No Head Value");
-            }
-            Node current = Head;
-            while (current != null)
-            {
-                if (current.Value == value)
+                if (Head == null)
                 {
-                    return true;
+                    return false;
                 }
-                current = current.Next;
+                else
+                {
+                    Node current = Head;
+                    while (current.Next != null)
+                    {
+                        if (current.Value == value)
+                        {
+                            return true;
+                        }
+                        current = current.Next;
+                    }
+                    return false;
+                }
             }
-            return false;
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("The argument format is not valid.");
+                return false;
+            }
 
         }
             
