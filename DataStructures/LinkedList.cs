@@ -32,8 +32,10 @@ namespace DataStructures
 
         public override string ToString()
         {
-            string linkedListOutput = "";
 
+            //This is a traversal: start with very plain
+            string linkedListOutput = "";
+           
             if (Head != null)
             {
                 linkedListOutput += $"{{{Current.Value}}}";

@@ -136,6 +136,21 @@ namespace DataStructuresTests
            
             Assert.True(newList.Includes(4));
         }
+        //check for bug in head.next in traversal
+        [Fact]
+        public void CanInsertIntoNonEmptyList()
+        {
+            //Arrange
+            LinkedList newList = new LinkedList();
+            newList.Insert(55);
+
+            //Act
+            newList.Insert(28);
+
+            //Assert
+            Assert.Equal("{28} -> {55} -> NULL", newList.ToString());
+
+        }
 
     }
 }
