@@ -124,9 +124,9 @@ namespace DataStructures
                 {
                     Node newNode = new Node(value);
                     current.Next = newNode;
-                    newNode.Value = value;
+                    break;
                 }
-                current = current.Next;
+               
             }
         }
 

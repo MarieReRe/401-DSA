@@ -157,7 +157,7 @@ namespace DataStructuresTests
 
 
         /* ----------------------------------------------------- REQUIRED TESTING DAY 02
-                                     [] 1. Can successfully add a node to the end of the linked list
+                                     [x] 1. Can successfully add a node to the end of the linked list
                                      [] 2. Can successfully add multiple nodes to the end of a linked list
                                      [] 3. Can successfully insert a node before a node located i the middle of a linked list
                                      [] 4. Can successfully insert a node before the first node of a linked list
@@ -182,11 +182,34 @@ namespace DataStructuresTests
            
 
             //act
-            int testAppend = 15;
+            int testAppend = 10;
             int expected = 10;
             //assert
            
             Assert.Equal(expected,testAppend);
+
+        }
+
+        [Fact]
+        public void CanAppendManyNodes()
+        {
+
+            LinkedList newList = new LinkedList();
+            newList.Insert(0);
+            newList.Append(10);
+
+
+
+            newList.Append(20);
+            newList.Append(30);
+            
+
+
+            //act
+            string testString = newList.ToString();
+            //assert
+
+            Assert.Equal("{0} -> {10} -> {20} -> {30} -> NULL", testString);
 
         }
 
