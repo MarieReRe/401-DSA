@@ -2,6 +2,7 @@ using DataStructures;
 using System;
 using System.Collections.Generic;
 using Xunit;
+using Xunit.Sdk;
 
 namespace DataStructuresTests
 {
@@ -149,6 +150,43 @@ namespace DataStructuresTests
 
             //Assert
             Assert.Equal("{28} -> {55} -> NULL", newList.ToString());
+
+        }
+
+
+
+
+        /* ----------------------------------------------------- REQUIRED TESTING DAY 02
+                                     [] 1. Can successfully add a node to the end of the linked list
+                                     [] 2. Can successfully add multiple nodes to the end of a linked list
+                                     [] 3. Can successfully insert a node before a node located i the middle of a linked list
+                                     [] 4. Can successfully insert a node before the first node of a linked list
+                                     [] 5. Can successfully insert after a node in the middle of the linked list
+                                     [] 6. Can successfully insert a node after the last node of the linked list
+       
+         * 
+         */
+
+
+        [Fact]
+        public void CanAppendNode()
+        {
+            //arrange
+            LinkedList newList = new LinkedList();
+            newList.Insert(8);
+            newList.Insert(6);
+            newList.Insert(4);
+            newList.Insert(2);
+
+            newList.Append(10);
+           
+
+            //act
+            int testAppend = 15;
+            int expected = 10;
+            //assert
+           
+            Assert.Equal(expected,testAppend);
 
         }
 

@@ -32,7 +32,7 @@ namespace DataStructures
 
         public override string ToString()
         {
-
+            // set a current node in each method to how you will want to use it
             //This is a traversal: start with very plain
             string linkedListOutput = "";
             Node current = Head;
@@ -56,7 +56,7 @@ namespace DataStructures
         public void Insert(int newNodeValue)
         {
             Node current = Head;
-            //Point newNode to 
+            //Point newNode to old list
             Node newNode = new Node(newNodeValue);
             if (Head != null)
             {
@@ -64,8 +64,6 @@ namespace DataStructures
             }
          
             Head = newNode;
-            current = newNode;
-
         }
 
 
@@ -77,7 +75,7 @@ namespace DataStructures
         /*                              INCLUDES
          - Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
          */
-         public bool Includes(int value)
+        public bool Includes(int value)
         {
             try
             {
@@ -107,9 +105,52 @@ namespace DataStructures
             }
 
         }
-            
-           
-       
+
+        /*                                             APPENDS
+                     .append(value) which adds a new node with the given value to the end of the list
+        */
+        public void Append(int value)
+        {
+         
+            Node current = Head;
+
+            while (current != null)
+            {
+                if (current.Next != null)
+                {
+                    current = current.Next;
+                }
+                else
+                {
+                    Node newNode = new Node(value);
+                    current.Next = newNode;
+                    newNode.Value = value;
+                }
+                current = current.Next;
+            }
+        }
+
+
+
+
+
+
+        /*                                             INSERT BEFORE
+                    .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+        */
+
+
+
+
+
+
+
+
+        /*                                             INSERT AFTER
+                   .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+        */
+
+
 
 
 
