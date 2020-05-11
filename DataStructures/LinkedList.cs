@@ -8,7 +8,7 @@ namespace DataStructures
     {
 
         public Node Head { get; set; }
-        private Node Current { get; set; }
+       
 
         public class Node
         {
@@ -35,14 +35,14 @@ namespace DataStructures
 
             //This is a traversal: start with very plain
             string linkedListOutput = "";
-           
+            Node current = Head;
             if (Head != null)
             {
-                linkedListOutput += $"{{{Current.Value}}}";
-                while (Current.Next != null)
+                linkedListOutput += $"{{{current.Value}}}";
+                while (current.Next != null)
                 {
-                    Current = Current.Next;
-                    linkedListOutput += $" -> {{{Current.Value}}}";
+                    current = current.Next;
+                    linkedListOutput += $" -> {{{current.Value}}}";
                 }
 
 
@@ -55,6 +55,8 @@ namespace DataStructures
          */
         public void Insert(int newNodeValue)
         {
+            Node current = Head;
+            //Point newNode to 
             Node newNode = new Node(newNodeValue);
             if (Head != null)
             {
@@ -62,7 +64,7 @@ namespace DataStructures
             }
          
             Head = newNode;
-            Current = newNode;
+            current = newNode;
 
         }
 
