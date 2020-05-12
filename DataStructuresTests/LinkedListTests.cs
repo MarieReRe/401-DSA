@@ -278,9 +278,8 @@ namespace DataStructuresTests
 
 
         /*                  Testing For Deltetion
-                          [] 1. Can we delete from head
-                          [] 2. Can We Delete from end
-                          [] 3. Can we delete a middle node 
+                       
+                          [x] 1. Can we delete a middle node 
          */
          [Fact]
          public void DeleteMiddleNode()
@@ -298,20 +297,5 @@ namespace DataStructuresTests
 
         }
 
-        [Fact]
-        public void DeleteFirstnode()
-        {
-            LinkedList newList = new LinkedList();
-            newList.Includes(5);
-            newList.Includes(4);
-            newList.Includes(3);
-            newList.Includes(2);
-            newList.Includes(1);
-            //act
-            newList.DeleteANode(null ,4);
-            // Arrange
-            Assert.False(newList.Includes(3));
-
-        }
     }
 }
