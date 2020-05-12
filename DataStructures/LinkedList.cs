@@ -222,6 +222,49 @@ namespace DataStructures
           
                
         }
+        public int KthFromEnd(int k)
+        {
+            //Set a counter, set to zero as usual
+            int listCounter = 0;
+
+
+            // set current as head, as usual
+            Node current = Head;
+
+            //Use while loop to traverse through and find length
+            while(current != null)
+            {
+                //Add to counter
+                listCounter++;
+                current = current.Next;
+            }
+
+            // next we need to find the distance from left
+            int distanceFromBeginning = listCounter - k - 1;
+
+            // check if the index is in bounds of the list and find its value
+            //If the distance from the beginning greater than zerp and distance from beginning is less than list length
+            if(distanceFromBeginning >= 0 && distanceFromBeginning < listCounter)
+            {
+                //set current as head....
+            
+                for( int i = 0; i < distanceFromBeginning; i++)
+                {
+                    // set current to next
+                    current = current.Next; 
+                }
+            }
+            //If the number is too big for the list we need to throw an exception
+            else
+            {
+                throw new Exception($"Number is too large for this linked list, try again! ");
+            }
+            return current.Value;
+
+
+
+
+        }
 
     }
 }

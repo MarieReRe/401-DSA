@@ -9,7 +9,7 @@ namespace DataStructuresTests
 {
     public class LinkedListTests
 
-    /*                  Tests needed: 
+    /*---------------------------------- REQUIRED TESTS DAY 01: 
             [x] 1. Can successfully instantiate an empty linked list
             [x] 2. Can properly insert into the linked list
             [x] 3. The head property will properly point to the first node in the linked list
@@ -163,7 +163,7 @@ namespace DataStructuresTests
                                      [x] 3. Can successfully insert a node before a node located i the middle of a linked list
                                      [x] 4. Can successfully insert a node before the first node of a linked list
                                      [x] 5. Can successfully insert after a node in the middle of the linked list
-                                     [] 6. Can successfully insert a node after the last node of the linked list
+                                     [x] 6. Can successfully insert a node after the last node of the linked list
        
          * 
          */
@@ -277,10 +277,11 @@ namespace DataStructuresTests
         }
 
 
-        /*                  Testing For Deltetion
+        /*---------------------------------------Testing For Deltetion
                        
-                          [x] 1. Can we delete a middle node 
+                                          [x] 1. Can we delete a middle node 
          */
+
          [Fact]
          public void DeleteMiddleNode()
         {
@@ -296,6 +297,70 @@ namespace DataStructuresTests
             Assert.False(newList.Includes(3));
 
         }
+
+
+         /* ----------------------------------------------------- REQUIRED TESTING DAY 03
+                                     [] 1. Where k is greater than the length of the linked list
+                                     [] 2. Where k and the length of the list are the sam
+                                     [] 3. Where k is not a positive integer
+                                     [] 4. Where the linked list is of a size 1
+                                     [] 5. "Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+         */
+         [Fact]
+        public void KGreaterThanListLength()
+        {
+            //Arrange
+
+            //Assert
+
+            // Act
+        }
+        [Fact]
+        public void KIsLengthOfList()
+        {
+             //Arrange
+
+            //Assert
+
+            // Act
+        }
+         [Fact]
+          public void KIsNegative()
+           {
+             //Arrange
+
+            //Assert
+
+            // Act
+
+           }
+           [Fact]
+          public void ListSizeOfOne()
+           {
+             //Arrange
+             LinkedList newList = new LinkedList();
+            newList.Includes(2);
+            //Assert: we need an int # to search
+            int kThValue = newList(5);
+
+
+
+
+            // Act
+            Assert.Equal(2, kThValue);
+
+           }
+           [Fact]
+          public void HappyPlace()
+           {
+             //Arrange
+
+            //Assert
+
+            // Act
+
+           }
+
 
     }
 }
