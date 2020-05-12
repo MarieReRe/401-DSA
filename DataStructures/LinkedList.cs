@@ -8,7 +8,8 @@ namespace DataStructures
     {
 
         public Node Head { get; set; }
-       
+      
+
 
         public class Node
         {
@@ -176,15 +177,36 @@ namespace DataStructures
                    .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
         */
 
+        public void InsertAfter(int value, int newValue)
+        {
+            Node newNode = new Node(newValue);
 
-
-
-
-
-
-
+            //traverses the list until it reaches the first node with the searched value
+            Node current = Head;
+            while (current != null)
+            {
+                //if the current node's value is the searched value, place the new node between current node and next
+                if (current.Value == value)
+                {
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    return;
+                }
+                current = current.Next;
+            }
+        }
 
 
 
     }
+
+
+
+
+
+
+
+
+
 }
+
