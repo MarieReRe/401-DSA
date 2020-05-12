@@ -53,7 +53,7 @@ namespace DataStructures
         /*                              INSERTION
          - Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
          */
-        public void Insert(int newNodeValue)
+        public void Include(int newNodeValue)
         {
             Node current = Head;
             //Point newNode to old list
@@ -124,6 +124,9 @@ namespace DataStructures
                 {
                     Node newNode = new Node(value);
                     current.Next = newNode;
+
+
+                    //break from loop once appending is done
                     break;
                 }
                
@@ -138,7 +141,30 @@ namespace DataStructures
         /*                                             INSERT BEFORE
                     .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
         */
+        public void InsertBefore(int value, int newValue)
+        {
+            if(Head.Value == value)
+            {
+                Include(newValue);
+                return;
+            }
 
+            // if head isnt the value we need to create a node and find the search value
+            Node newNode = new Node(newValue);
+
+            // Next we need to traverse the list until it reaches the first node beforea  node with the search value
+            Node current = Head;
+            while(current != null)
+            {
+                if(current.Next.Value == value)
+                {
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    return;
+                }
+                current = current.Next;
+            }
+        }
 
 
 

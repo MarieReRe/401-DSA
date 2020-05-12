@@ -39,7 +39,7 @@ namespace DataStructuresTests
             LinkedList insertToLinkedList = new LinkedList();
 
             //Act
-            insertToLinkedList.Insert(19);
+            insertToLinkedList.Include(19);
 
             //Assert
             Assert.Equal(19, insertToLinkedList.Head.Value);
@@ -67,7 +67,7 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Insert(28);
+            newList.Include(28);
 
             //Assert
             Assert.Equal("{28} -> NULL", newList.ToString());
@@ -78,10 +78,10 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Insert(1);
-            newList.Insert(2);
-            newList.Insert(3);
-            newList.Insert(4);
+            newList.Include(1);
+            newList.Include(2);
+            newList.Include(3);
+            newList.Include(4);
             string testString = newList.ToString();
 
             //Assert
@@ -95,10 +95,10 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Insert(1);
-            newList.Insert(2);
-            newList.Insert(3);
-            newList.Insert(4);
+            newList.Include(1);
+            newList.Include(2);
+            newList.Include(3);
+            newList.Include(4);
 
 
 
@@ -110,10 +110,10 @@ namespace DataStructuresTests
         public void ShowAllValues()
         {
             LinkedList newList = new LinkedList();
-            newList.Insert(1);
-            newList.Insert(2);
-            newList.Insert(3);
-            newList.Insert(4);
+            newList.Include(1);
+            newList.Include(2);
+            newList.Include(3);
+            newList.Include(4);
             string testString = newList.ToString();
 
 
@@ -127,10 +127,10 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Insert(1);
-            newList.Insert(2);
-            newList.Insert(3);
-            newList.Insert(4);
+            newList.Include(1);
+            newList.Include(2);
+            newList.Include(3);
+            newList.Include(4);
             
 
             //Assert
@@ -143,10 +143,10 @@ namespace DataStructuresTests
         {
             //Arrange
             LinkedList newList = new LinkedList();
-            newList.Insert(55);
+            newList.Include(55);
 
             //Act
-            newList.Insert(28);
+            newList.Include(28);
 
             //Assert
             Assert.Equal("{28} -> {55} -> NULL", newList.ToString());
@@ -158,7 +158,7 @@ namespace DataStructuresTests
 
         /* ----------------------------------------------------- REQUIRED TESTING DAY 02
                                      [x] 1. Can successfully add a node to the end of the linked list
-                                     [] 2. Can successfully add multiple nodes to the end of a linked list
+                                     [x] 2. Can successfully add multiple nodes to the end of a linked list
                                      [] 3. Can successfully insert a node before a node located i the middle of a linked list
                                      [] 4. Can successfully insert a node before the first node of a linked list
                                      [] 5. Can successfully insert after a node in the middle of the linked list
@@ -173,10 +173,10 @@ namespace DataStructuresTests
         {
             //arrange
             LinkedList newList = new LinkedList();
-            newList.Insert(8);
-            newList.Insert(6);
-            newList.Insert(4);
-            newList.Insert(2);
+            newList.Include(8);
+            newList.Include(6);
+            newList.Include(4);
+            newList.Include(2);
 
             newList.Append(10);
            
@@ -195,11 +195,8 @@ namespace DataStructuresTests
         {
 
             LinkedList newList = new LinkedList();
-            newList.Insert(0);
+            newList.Include(0);
             newList.Append(10);
-
-
-
             newList.Append(20);
             newList.Append(30);
             
@@ -211,6 +208,22 @@ namespace DataStructuresTests
 
             Assert.Equal("{0} -> {10} -> {20} -> {30} -> NULL", testString);
 
+        }
+        [Fact]
+        public void CanInsertBeforeFirstNode()
+        {
+            //assert
+
+            LinkedList newList = new LinkedList();
+           
+            newList.Include(0);
+          
+            //act
+            newList.InsertBefore(0, 99);
+           
+
+            // assert
+            Assert.Equal(99,newList.Head.Value);
         }
 
     }
