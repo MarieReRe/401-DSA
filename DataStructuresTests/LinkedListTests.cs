@@ -351,6 +351,7 @@ namespace DataStructuresTests
            [Fact]
           public void HappyPlace()
            {
+            //fails because starts from beginning
             //Arrange
             LinkedList newList = new LinkedList();
             newList.Insert(4);//4
@@ -360,9 +361,9 @@ namespace DataStructuresTests
             newList.Insert(44);//0
             // Act
          
-
+            // index is flip flopped with kTh from end
             //Assert
-            Assert.Equal(0, newList.KthFromEnd(44));
+            Assert.Equal(44, newList.KthFromEnd(4));
 
 
 

@@ -225,35 +225,33 @@ namespace DataStructures
         }
         public int KthFromEnd(int k)
         {
-            
-            // set current as head, as usual
+
+            int linkedListLength = 0;
             Node current = Head;
+            //For out of bounds
+            if (k < 0)
+            {
+                throw new ArgumentOutOfRangeException("k cannot be negative");
+            }
+            if (k < linkedListLength)
+            {
+                throw new ArgumentOutOfRangeException("k cannot be longer than linked list");
+            }
 
-            //Set a counter, set to zero as usual
-            //index of node we are currently looking at
-            int indexOfNode = 0; 
-
-            //Use while loop to traverse through and find length
             while (current != null)
             {
-                if(indexOfNode == k)
-                {
-                    return current.Value;
-                    
-                }
-                else
-                {
-                    indexOfNode++;
-                    current = current.Next;
-                }
-
-              
-               
+                linkedListLength++;
+                current = current.Next;
             }
-            return indexOfNode;
 
-           
 
+            current = Head; 
+            for(int i = 0; i < linkedListLength - k - 1; i++)
+            {
+                current = current.Next; 
+
+            }
+            return current.Value;
 
 
 
