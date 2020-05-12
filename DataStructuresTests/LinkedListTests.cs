@@ -301,40 +301,58 @@ namespace DataStructuresTests
 
          /* ----------------------------------------------------- REQUIRED TESTING DAY 03
                                      [] 1. Where k is greater than the length of the linked list
-                                     [] 2. Where k and the length of the list are the sam
-                                     [] 3. Where k is not a positive integer
+                                     [] 2. Where k and the length of the list are the same
+                                     [x] 3. Where k is not a positive integer
                                      [x] 4. Where the linked list is of a size 1
-                                     [] 5. "Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+                                     [x] 5. "Happy Path” where k is not at the end, but somewhere in the middle of the linked list
          */
          [Fact]
         public void KGreaterThanListLength()
         {
             //Arrange
+            LinkedList newList = new LinkedList();
+            for (int i = 1; i <= 5; i++)
+            {
+                newList.Append(i);
+            }
+            // Act
 
             //Assert
-
-            // Act
+            Assert.Throws<IndexOutOfRangeException>(() => newList.KthFromEnd(6));
         }
         [Fact]
         public void KIsLengthOfList()
         {
-             //Arrange
+            //Arrange
+            LinkedList newList = new LinkedList();
+            newList.Insert(4);//4
+            newList.Insert(14);//3
+            newList.Insert(24);//2
+            newList.Insert(34);//1
+            newList.Insert(44);//0
 
             //Assert
+            Assert.Equal(4, newList.KthFromEnd(0));
 
-            // Act
+
         }
-         [Fact]
+        [Fact]
           public void KIsNegative()
            {
-             //Arrange
-
-            //Assert
-
+            //Arrange
+            LinkedList newList = new LinkedList();
+            for (int i = 1; i <= 5; i++)
+            {
+                newList.Append(i);
+            }
             // Act
 
-           }
-           [Fact]
+            //Assert
+            Assert.Throws<IndexOutOfRangeException>(() => newList.KthFromEnd(-1));
+
+
+        }
+        [Fact]
           public void ListSizeOfOne()
            {
              //Arrange

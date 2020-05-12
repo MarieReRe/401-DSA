@@ -228,26 +228,31 @@ namespace DataStructures
 
             int linkedListLength = 0;
             Node current = Head;
+            //gets length of linked list
+            while (current != null)
+            {
+
+                linkedListLength++;
+                current = current.Next;
+
+            }
+          
             //For out of bounds
             if (k < 0)
             {
-                throw new ArgumentOutOfRangeException("k cannot be negative");
+                throw new IndexOutOfRangeException("k cannot be negative");
             }
-            if (k < linkedListLength)
+            if (k > linkedListLength)
             {
-                throw new ArgumentOutOfRangeException("k cannot be longer than linked list");
-            }
-
-            while (current != null)
-            {
-                linkedListLength++;
-                current = current.Next;
+                throw new IndexOutOfRangeException("k cannot be longer than linked list");
             }
 
-
-            current = Head; 
-            for(int i = 0; i < linkedListLength - k - 1; i++)
+            //loops through again 
+            current = Head;
+            int counter = 0;
+            while(current != null && counter < linkedListLength - k -1)
             {
+                counter++;
                 current = current.Next; 
 
             }
