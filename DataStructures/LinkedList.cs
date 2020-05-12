@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Transactions;
 using System.Xml;
 
@@ -54,7 +55,7 @@ namespace DataStructures
         /*                              INSERTION
          - Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
          */
-        public void Include(int newNodeValue)
+        public void Insert(int newNodeValue)
         {
             Node current = Head;
             //Point newNode to old list
@@ -146,7 +147,7 @@ namespace DataStructures
         {
             if(Head.Value == value)
             {
-                Include(newValue);
+                Insert(newValue);
                 return;
             }
 
@@ -224,42 +225,34 @@ namespace DataStructures
         }
         public int KthFromEnd(int k)
         {
-            //Set a counter, set to zero as usual
-            int listCounter = 0;
-
-
+            
             // set current as head, as usual
             Node current = Head;
 
+            //Set a counter, set to zero as usual
+            //index of node we are currently looking at
+            int indexOfNode = 0; 
+
             //Use while loop to traverse through and find length
-            while(current != null)
+            while (current != null)
             {
-                //Add to counter
-                listCounter++;
-                current = current.Next;
-            }
-
-            // next we need to find the distance from left
-            int distanceFromBeginning = listCounter - k - 1;
-
-            // check if the index is in bounds of the list and find its value
-            //If the distance from the beginning greater than zerp and distance from beginning is less than list length
-            if(distanceFromBeginning >= 0 && distanceFromBeginning < listCounter)
-            {
-                //set current as head....
-            
-                for( int i = 0; i < distanceFromBeginning; i++)
+                if(indexOfNode == k)
                 {
-                    // set current to next
-                    current = current.Next; 
+                    return current.Value;
+                    
                 }
+                else
+                {
+                    indexOfNode++;
+                    current = current.Next;
+                }
+
+              
+               
             }
-            //If the number is too big for the list we need to throw an exception
-            else
-            {
-                throw new Exception($"Number is too large for this linked list, try again! ");
-            }
-            return current.Value;
+            return indexOfNode;
+
+           
 
 
 

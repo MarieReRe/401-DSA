@@ -40,7 +40,7 @@ namespace DataStructuresTests
             LinkedList insertToLinkedList = new LinkedList();
 
             //Act
-            insertToLinkedList.Include(19);
+            insertToLinkedList.Insert(19);
 
             //Assert
             Assert.Equal(19, insertToLinkedList.Head.Value);
@@ -68,7 +68,7 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Include(28);
+            newList.Insert(28);
 
             //Assert
             Assert.Equal("{28} -> NULL", newList.ToString());
@@ -79,10 +79,10 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Include(1);
-            newList.Include(2);
-            newList.Include(3);
-            newList.Include(4);
+            newList.Insert(1);
+            newList.Insert(2);
+            newList.Insert(3);
+            newList.Insert(4);
             string testString = newList.ToString();
 
             //Assert
@@ -96,10 +96,10 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Include(1);
-            newList.Include(2);
-            newList.Include(3);
-            newList.Include(4);
+            newList.Insert(1);
+            newList.Insert(2);
+            newList.Insert(3);
+            newList.Insert(4);
 
 
 
@@ -111,10 +111,10 @@ namespace DataStructuresTests
         public void ShowAllValues()
         {
             LinkedList newList = new LinkedList();
-            newList.Include(1);
-            newList.Include(2);
-            newList.Include(3);
-            newList.Include(4);
+            newList.Insert(1);
+            newList.Insert(2);
+            newList.Insert(3);
+            newList.Insert(4);
             string testString = newList.ToString();
 
 
@@ -128,10 +128,10 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Include(1);
-            newList.Include(2);
-            newList.Include(3);
-            newList.Include(4);
+            newList.Insert(1);
+            newList.Insert(2);
+            newList.Insert(3);
+            newList.Insert(4);
             
 
             //Assert
@@ -144,10 +144,10 @@ namespace DataStructuresTests
         {
             //Arrange
             LinkedList newList = new LinkedList();
-            newList.Include(55);
+            newList.Insert(55);
 
             //Act
-            newList.Include(28);
+            newList.Insert(28);
 
             //Assert
             Assert.Equal("{28} -> {55} -> NULL", newList.ToString());
@@ -174,10 +174,10 @@ namespace DataStructuresTests
         {
             //arrange
             LinkedList newList = new LinkedList();
-            newList.Include(8);
-            newList.Include(6);
-            newList.Include(4);
-            newList.Include(2);
+            newList.Insert(8);
+            newList.Insert(6);
+            newList.Insert(4);
+            newList.Insert(2);
 
             newList.Append(10);
            
@@ -196,7 +196,7 @@ namespace DataStructuresTests
         {
 
             LinkedList newList = new LinkedList();
-            newList.Include(0);
+            newList.Insert(0);
             newList.Append(10);
             newList.Append(20);
             newList.Append(30);
@@ -217,7 +217,7 @@ namespace DataStructuresTests
 
             LinkedList newList = new LinkedList();
 
-            newList.Include(0);
+            newList.Insert(0);
             
 
             //act
@@ -232,10 +232,10 @@ namespace DataStructuresTests
         {
             //arrange
             LinkedList newList = new LinkedList();
-            newList.Include(30);
-            newList.Include(20);
-            newList.Include(10);
-            newList.Include(0);
+            newList.Insert(30);
+            newList.Insert(20);
+            newList.Insert(10);
+            newList.Insert(0);
             // act
             newList.InsertBefore(20, 99);
             string testString = newList.ToString();
@@ -249,10 +249,10 @@ namespace DataStructuresTests
 
             //arrange
             LinkedList newList = new LinkedList();
-            newList.Include(30);
-            newList.Include(20);
-            newList.Include(10);
-            newList.Include(0);
+            newList.Insert(30);
+            newList.Insert(20);
+            newList.Insert(10);
+            newList.Insert(0);
             //act
             newList.InsertAfter(20, 99);
             string testString = newList.ToString();
@@ -264,10 +264,10 @@ namespace DataStructuresTests
         {
             //arrange
             LinkedList newList = new LinkedList();
-            newList.Include(30);
-            newList.Include(20);
-            newList.Include(10);
-            newList.Include(0);
+            newList.Insert(30);
+            newList.Insert(20);
+            newList.Insert(10);
+            newList.Insert(0);
 
             newList.InsertAfter(30, 99);
             string testString = newList.ToString();
@@ -303,7 +303,7 @@ namespace DataStructuresTests
                                      [] 1. Where k is greater than the length of the linked list
                                      [] 2. Where k and the length of the list are the sam
                                      [] 3. Where k is not a positive integer
-                                     [] 4. Where the linked list is of a size 1
+                                     [x] 4. Where the linked list is of a size 1
                                      [] 5. "Happy Path” where k is not at the end, but somewhere in the middle of the linked list
          */
          [Fact]
@@ -339,27 +339,34 @@ namespace DataStructuresTests
            {
              //Arrange
              LinkedList newList = new LinkedList();
-            newList.Includes(2);
-            //Assert: we need an int # to search
-            int kThValue = newList(5);
-
-
-
+              newList.Insert(4);
+         
+          
 
             // Act
-            Assert.Equal(2, kThValue);
-
+          
+            //Assert
+            Assert.Equal(4, newList.KthFromEnd(0));
            }
            [Fact]
           public void HappyPlace()
            {
-             //Arrange
+            //Arrange
+            LinkedList newList = new LinkedList();
+            newList.Insert(4);//4
+            newList.Insert(14);//3
+            newList.Insert(24);//2
+            newList.Insert(34);//1
+            newList.Insert(44);//0
+            // Act
+         
 
             //Assert
+            Assert.Equal(0, newList.KthFromEnd(44));
 
-            // Act
 
-           }
+
+        }
 
 
     }
