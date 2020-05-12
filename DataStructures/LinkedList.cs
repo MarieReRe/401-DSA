@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Transactions;
 using System.Xml;
 
@@ -54,7 +55,7 @@ namespace DataStructures
         /*                              INSERTION
          - Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
          */
-        public void Include(int newNodeValue)
+        public void Insert(int newNodeValue)
         {
             Node current = Head;
             //Point newNode to old list
@@ -146,7 +147,7 @@ namespace DataStructures
         {
             if(Head.Value == value)
             {
-                Include(newValue);
+                Insert(newValue);
                 return;
             }
 
@@ -221,6 +222,44 @@ namespace DataStructures
             }
           
                
+        }
+        public int KthFromEnd(int k)
+        {
+
+            int linkedListLength = 0;
+            Node current = Head;
+            //gets length of linked list
+            while (current != null)
+            {
+
+                linkedListLength++;
+                current = current.Next;
+
+            }
+          
+            //For out of bounds
+            if (k < 0)
+            {
+                throw new IndexOutOfRangeException("k cannot be negative");
+            }
+            if (k > linkedListLength)
+            {
+                throw new IndexOutOfRangeException("k cannot be longer than linked list");
+            }
+
+            //loops through again 
+            current = Head;
+            int counter = 0;
+            while(current != null && counter < linkedListLength - k -1)
+            {
+                counter++;
+                current = current.Next; 
+
+            }
+            return current.Value;
+
+
+
         }
 
     }

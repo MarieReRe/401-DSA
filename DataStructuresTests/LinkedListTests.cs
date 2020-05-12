@@ -9,7 +9,7 @@ namespace DataStructuresTests
 {
     public class LinkedListTests
 
-    /*                  Tests needed: 
+    /*---------------------------------- REQUIRED TESTS DAY 01: 
             [x] 1. Can successfully instantiate an empty linked list
             [x] 2. Can properly insert into the linked list
             [x] 3. The head property will properly point to the first node in the linked list
@@ -40,7 +40,7 @@ namespace DataStructuresTests
             LinkedList insertToLinkedList = new LinkedList();
 
             //Act
-            insertToLinkedList.Include(19);
+            insertToLinkedList.Insert(19);
 
             //Assert
             Assert.Equal(19, insertToLinkedList.Head.Value);
@@ -68,7 +68,7 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Include(28);
+            newList.Insert(28);
 
             //Assert
             Assert.Equal("{28} -> NULL", newList.ToString());
@@ -79,10 +79,10 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Include(1);
-            newList.Include(2);
-            newList.Include(3);
-            newList.Include(4);
+            newList.Insert(1);
+            newList.Insert(2);
+            newList.Insert(3);
+            newList.Insert(4);
             string testString = newList.ToString();
 
             //Assert
@@ -96,10 +96,10 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Include(1);
-            newList.Include(2);
-            newList.Include(3);
-            newList.Include(4);
+            newList.Insert(1);
+            newList.Insert(2);
+            newList.Insert(3);
+            newList.Insert(4);
 
 
 
@@ -111,10 +111,10 @@ namespace DataStructuresTests
         public void ShowAllValues()
         {
             LinkedList newList = new LinkedList();
-            newList.Include(1);
-            newList.Include(2);
-            newList.Include(3);
-            newList.Include(4);
+            newList.Insert(1);
+            newList.Insert(2);
+            newList.Insert(3);
+            newList.Insert(4);
             string testString = newList.ToString();
 
 
@@ -128,10 +128,10 @@ namespace DataStructuresTests
             LinkedList newList = new LinkedList();
 
             //Act
-            newList.Include(1);
-            newList.Include(2);
-            newList.Include(3);
-            newList.Include(4);
+            newList.Insert(1);
+            newList.Insert(2);
+            newList.Insert(3);
+            newList.Insert(4);
             
 
             //Assert
@@ -144,10 +144,10 @@ namespace DataStructuresTests
         {
             //Arrange
             LinkedList newList = new LinkedList();
-            newList.Include(55);
+            newList.Insert(55);
 
             //Act
-            newList.Include(28);
+            newList.Insert(28);
 
             //Assert
             Assert.Equal("{28} -> {55} -> NULL", newList.ToString());
@@ -163,7 +163,7 @@ namespace DataStructuresTests
                                      [x] 3. Can successfully insert a node before a node located i the middle of a linked list
                                      [x] 4. Can successfully insert a node before the first node of a linked list
                                      [x] 5. Can successfully insert after a node in the middle of the linked list
-                                     [] 6. Can successfully insert a node after the last node of the linked list
+                                     [x] 6. Can successfully insert a node after the last node of the linked list
        
          * 
          */
@@ -174,10 +174,10 @@ namespace DataStructuresTests
         {
             //arrange
             LinkedList newList = new LinkedList();
-            newList.Include(8);
-            newList.Include(6);
-            newList.Include(4);
-            newList.Include(2);
+            newList.Insert(8);
+            newList.Insert(6);
+            newList.Insert(4);
+            newList.Insert(2);
 
             newList.Append(10);
            
@@ -196,7 +196,7 @@ namespace DataStructuresTests
         {
 
             LinkedList newList = new LinkedList();
-            newList.Include(0);
+            newList.Insert(0);
             newList.Append(10);
             newList.Append(20);
             newList.Append(30);
@@ -217,7 +217,7 @@ namespace DataStructuresTests
 
             LinkedList newList = new LinkedList();
 
-            newList.Include(0);
+            newList.Insert(0);
             
 
             //act
@@ -232,10 +232,10 @@ namespace DataStructuresTests
         {
             //arrange
             LinkedList newList = new LinkedList();
-            newList.Include(30);
-            newList.Include(20);
-            newList.Include(10);
-            newList.Include(0);
+            newList.Insert(30);
+            newList.Insert(20);
+            newList.Insert(10);
+            newList.Insert(0);
             // act
             newList.InsertBefore(20, 99);
             string testString = newList.ToString();
@@ -249,10 +249,10 @@ namespace DataStructuresTests
 
             //arrange
             LinkedList newList = new LinkedList();
-            newList.Include(30);
-            newList.Include(20);
-            newList.Include(10);
-            newList.Include(0);
+            newList.Insert(30);
+            newList.Insert(20);
+            newList.Insert(10);
+            newList.Insert(0);
             //act
             newList.InsertAfter(20, 99);
             string testString = newList.ToString();
@@ -264,10 +264,10 @@ namespace DataStructuresTests
         {
             //arrange
             LinkedList newList = new LinkedList();
-            newList.Include(30);
-            newList.Include(20);
-            newList.Include(10);
-            newList.Include(0);
+            newList.Insert(30);
+            newList.Insert(20);
+            newList.Insert(10);
+            newList.Insert(0);
 
             newList.InsertAfter(30, 99);
             string testString = newList.ToString();
@@ -277,11 +277,11 @@ namespace DataStructuresTests
         }
 
 
-        /*                  Testing For Deltetion
-                          [] 1. Can we delete from head
-                          [] 2. Can We Delete from end
-                          [] 3. Can we delete a middle node 
+        /*---------------------------------------Testing For Deltetion
+                       
+                                          [x] 1. Can we delete a middle node 
          */
+
          [Fact]
          public void DeleteMiddleNode()
         {
@@ -298,20 +298,95 @@ namespace DataStructuresTests
 
         }
 
-        [Fact]
-        public void DeleteFirstnode()
+
+         /* ----------------------------------------------------- REQUIRED TESTING DAY 03
+                                     [] 1. Where k is greater than the length of the linked list
+                                     [] 2. Where k and the length of the list are the same
+                                     [x] 3. Where k is not a positive integer
+                                     [x] 4. Where the linked list is of a size 1
+                                     [x] 5. "Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+         */
+         [Fact]
+        public void KGreaterThanListLength()
         {
+            //Arrange
             LinkedList newList = new LinkedList();
-            newList.Includes(5);
-            newList.Includes(4);
-            newList.Includes(3);
-            newList.Includes(2);
-            newList.Includes(1);
-            //act
-            newList.DeleteANode(null ,4);
-            // Arrange
-            Assert.False(newList.Includes(3));
+            for (int i = 1; i <= 5; i++)
+            {
+                newList.Append(i);
+            }
+            // Act
+
+            //Assert
+            Assert.Throws<IndexOutOfRangeException>(() => newList.KthFromEnd(6));
+        }
+        [Fact]
+        public void KIsLengthOfList()
+        {
+            //Arrange
+            LinkedList newList = new LinkedList();
+            newList.Insert(4);//4
+            newList.Insert(14);//3
+            newList.Insert(24);//2
+            newList.Insert(34);//1
+            newList.Insert(44);//0
+
+            //Assert
+            Assert.Equal(4, newList.KthFromEnd(0));
+
 
         }
+        [Fact]
+          public void KIsNegative()
+           {
+            //Arrange
+            LinkedList newList = new LinkedList();
+            for (int i = 1; i <= 5; i++)
+            {
+                newList.Append(i);
+            }
+            // Act
+
+            //Assert
+            Assert.Throws<IndexOutOfRangeException>(() => newList.KthFromEnd(-1));
+
+
+        }
+        [Fact]
+          public void ListSizeOfOne()
+           {
+             //Arrange
+             LinkedList newList = new LinkedList();
+              newList.Insert(4);
+         
+          
+
+            // Act
+          
+            //Assert
+            Assert.Equal(4, newList.KthFromEnd(0));
+           }
+           [Fact]
+          public void HappyPlace()
+           {
+            //fails because starts from beginning
+            //Arrange
+            LinkedList newList = new LinkedList();
+            newList.Insert(4);//4
+            newList.Insert(14);//3
+            newList.Insert(24);//2
+            newList.Insert(34);//1
+            newList.Insert(44);//0
+            // Act
+         
+            // index is flip flopped with kTh from end
+            //Assert
+            Assert.Equal(44, newList.KthFromEnd(4));
+
+
+
+        }
+
+
     }
 }
