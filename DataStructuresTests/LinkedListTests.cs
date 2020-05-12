@@ -213,7 +213,7 @@ namespace DataStructuresTests
         [Fact]
         public void CanInsertBeforeFirstNode()
         {
-            //assert
+            //arrange
 
             LinkedList newList = new LinkedList();
 
@@ -230,13 +230,13 @@ namespace DataStructuresTests
         [Fact]
         public void CanInsertNewNodeAfterNodeGivenInTheMiddleOfList()
         {
-
+            //arrange
             LinkedList newList = new LinkedList();
             newList.Include(30);
             newList.Include(20);
             newList.Include(10);
             newList.Include(0);
-
+            // act
             newList.InsertBefore(20, 99);
             string testString = newList.ToString();
             //Assert
@@ -246,12 +246,14 @@ namespace DataStructuresTests
         [Fact]
         public void CanInsertAfterNode()
         {
+
+            //arrange
             LinkedList newList = new LinkedList();
             newList.Include(30);
             newList.Include(20);
             newList.Include(10);
             newList.Include(0);
-
+            //act
             newList.InsertAfter(20, 99);
             string testString = newList.ToString();
             //Assert
@@ -260,6 +262,7 @@ namespace DataStructuresTests
         [Fact]
         public void CanInsertAfterLastNode()
         {
+            //arrange
             LinkedList newList = new LinkedList();
             newList.Include(30);
             newList.Include(20);
@@ -270,6 +273,44 @@ namespace DataStructuresTests
             string testString = newList.ToString();
             //Assert
             Assert.Equal("{0} -> {10} -> {20} -> {30} -> {99} -> NULL", testString);
+
+        }
+
+
+        /*                  Testing For Deltetion
+                          [] 1. Can we delete from head
+                          [] 2. Can We Delete from end
+                          [] 3. Can we delete a middle node 
+         */
+         [Fact]
+         public void DeleteMiddleNode()
+        {
+            LinkedList newList = new LinkedList();
+            newList.Includes(5);
+            newList.Includes(4);
+            newList.Includes(3);
+            newList.Includes(2);
+            newList.Includes(1);
+            //act
+            newList.DeleteANode(4,2);
+            // Arrange
+            Assert.False(newList.Includes(3));
+
+        }
+
+        [Fact]
+        public void DeleteFirstnode()
+        {
+            LinkedList newList = new LinkedList();
+            newList.Includes(5);
+            newList.Includes(4);
+            newList.Includes(3);
+            newList.Includes(2);
+            newList.Includes(1);
+            //act
+            newList.DeleteANode(null ,4);
+            // Arrange
+            Assert.False(newList.Includes(3));
 
         }
     }

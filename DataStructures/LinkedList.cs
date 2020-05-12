@@ -195,18 +195,34 @@ namespace DataStructures
                 current = current.Next;
             }
         }
+        public void DeleteANode(int nodeStart, int nodeEnd )
+        {
+            Node current = Head;
+            Node previousNode = null;
+            while (current != null)
+            {
+                if(current.Value >= nodeStart && current.Value <= nodeEnd)
+                {
+                    if(previousNode == null)
+                    {
+                        Head = current.Next;
+                    }
+                    else
+                    {
+                        previousNode.Next = current.Next;
+                    }
+                }
+                else
+                {
+                    previousNode = current;
+                }
+                current = current.Next;
 
-
+            }
+          
+               
+        }
 
     }
-
-
-
-
-
-
-
-
-
 }
 
