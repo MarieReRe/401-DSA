@@ -24,6 +24,13 @@ namespace ChallengesTest
             int result = ArrayChallenges.BinarySearch(array, searchKey);
             Assert.Equal(-1, result);
         }
+        // multi values
+
+        // empty array
+
+        // search key null
+
+        // array not sorted
 
 
 
