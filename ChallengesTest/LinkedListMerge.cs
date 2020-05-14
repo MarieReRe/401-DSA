@@ -46,6 +46,19 @@ namespace LinkedListMerge.Test
             // Assert
             Assert.Equal(expectedMergedList,MergedList.ToString());
         }
+        [Fact]
+        public void NullListIsNull()
+        {
+            LinkedList nullListOne = new LinkedList();
+            LinkedList nullListTwo = new LinkedList();
+
+            LinkedList MergeList = Challenges.LLMerge.Merge(nullListOne,nullListTwo);
+
+
+
+            Assert.Null(MergeList.Head);
+
+        }
         
 
     }
