@@ -52,7 +52,7 @@ namespace LinkedListMerge.Test
             LinkedList nullListOne = new LinkedList();
             LinkedList nullListTwo = new LinkedList();
 
-            LinkedList MergeList = Challenges.LLMerge.Merge(nullListOne,nullListTwo);
+            LinkedList MergeList = LLMerge.Merge(nullListOne,nullListTwo);
 
 
 
@@ -60,6 +60,28 @@ namespace LinkedListMerge.Test
 
         }
         
+        [Fact]
+        public void ReturnOneLinkedListIfOneIsNull()
+        {
+            LinkedList linkedListOne = new LinkedList();
+            linkedListOne.Includes(0);
+            linkedListOne.Includes(1);
+            linkedListOne.Includes(2);
+            linkedListOne.Includes(3);
+            linkedListOne.Includes(4);
 
+            LinkedList nullList = new LinkedList();
+            
+
+
+            LinkedList MergeList = LLMerge.Merge(linkedListOne, nullList);
+            MergeList.Includes(0);
+            MergeList.Includes(1);
+            MergeList.Includes(2);
+            MergeList.Includes(3);
+            MergeList.Includes(4);
+
+            Assert.Equal(linkedListOne.ToString(), MergeList.ToString());
+        }
     }
 }
