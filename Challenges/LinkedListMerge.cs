@@ -7,24 +7,40 @@ namespace Challenges
     {
         public static LinkedList Merge(LinkedList firstList, LinkedList secondList)
         {
-            // set head to current
-            Node firstCurrent = firstList.Head;
-            Node secondCurrent = secondList.Head;
-
-            //set up next
-            
-            
-           // Head = current;
-           while(firstCurrent != null && secondCurrent != null)
+            //if one head is null return the opposite list
+           if(firstList.Head == null)
             {
-               // Node firstNext = firstCurrent.Next;
-               // Node secondNext = secondCurrent.Next;
+                return secondList;
+            }
+           if(secondList.Head == null)
+            {
+                return firstList;
+            }
 
+           //if both lists are null return null
+           if(firstList == null && secondList == null)
+            {
+                return null;
+            }
+            //set up our currents to be the Head
+            Node CurrentFirstList = firstList.Head;
+            Node CurrentSecondList = secondList.Head;
 
+            //merge one node after the other
+            while(CurrentFirstList != null && CurrentSecondList != null)
+            {
+                secondList.Head = CurrentSecondList;
+                CurrentSecondList.Next = CurrentFirstList.Next;
+                CurrentFirstList = CurrentFirstList.Next;
+                CurrentSecondList = secondList.Head;
             }
 
 
-            //set up our
+            //check if the second list current isnt null
+            if(CurrentSecondList != null)
+            {
+                CurrentFirstList.Next = CurrentSecondList;
+            }
 
             return firstList;
         }
