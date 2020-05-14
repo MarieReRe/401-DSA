@@ -3,6 +3,8 @@ namespace DataStructures
 
     public class DoublyLinkedList
     {
+
+        //use inheritence, research this. Is this possible?
         public Node Head { get; set; }
         public Node Tail {get; set; }
 
