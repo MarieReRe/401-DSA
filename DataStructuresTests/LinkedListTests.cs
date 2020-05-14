@@ -280,6 +280,7 @@ namespace DataStructuresTests
         /*---------------------------------------Testing For Deltetion
                        
                                           [x] 1. Can we delete a middle node 
+                                         
          */
 
          [Fact]
@@ -338,7 +339,7 @@ namespace DataStructuresTests
         }
         [Fact]
           public void KIsNegative()
-           {
+          {
             //Arrange
             LinkedList newList = new LinkedList();
             for (int i = 1; i <= 5; i++)
@@ -351,10 +352,10 @@ namespace DataStructuresTests
             Assert.Throws<IndexOutOfRangeException>(() => newList.KthFromEnd(-1));
 
 
-        }
+          }
         [Fact]
           public void ListSizeOfOne()
-           {
+          {
              //Arrange
              LinkedList newList = new LinkedList();
               newList.Insert(4);
@@ -365,10 +366,10 @@ namespace DataStructuresTests
           
             //Assert
             Assert.Equal(4, newList.KthFromEnd(0));
-           }
+          }
            [Fact]
           public void HappyPlace()
-           {
+          {
             //fails because starts from beginning
             //Arrange
             LinkedList newList = new LinkedList();
@@ -385,6 +386,25 @@ namespace DataStructuresTests
 
 
 
+          }
+        /* ----------------- DOUBLY LINKED LIST TESTING----------------------------------
+         * 
+         * 
+         * 
+         * 
+   */
+
+        [Fact]
+        public void CreationOfEmptyDblLList()
+        {
+            //Arrange
+
+
+            // Act
+            LinkedList testLinkedList = new LinkedList();
+
+            //Assert
+            Assert.NotNull(testLinkedList);
         }
 
 
