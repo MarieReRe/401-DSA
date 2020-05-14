@@ -14,7 +14,7 @@ namespace LinkedListMerge.Test
       *         2. can merge differnt length tests
       *         3. Merging lists returns empty when both lists are empty
       *         4. merge list returns second list if one is empty
-      *         5. 
+      *       
       * 
       * 
       */
@@ -28,19 +28,25 @@ namespace LinkedListMerge.Test
             firstList.Insert(3);
             firstList.Insert(5);
 
-            DataStructures.LinkedList secondList = new LinkedList();
+            LinkedList secondList = new LinkedList();
             secondList.Insert(2);
-            secondList.Insert(3);
             secondList.Insert(4);
+            secondList.Insert(6);
 
-            string expected = "{1} -> {2} -> {3} -> {4} -> {5} -> {6} -> NULL";
-            //act
-            DataStructures.LinkedList mergedList = LLMerge.Merge(firstList,
-            secondList);
-            string actual = mergedList.ToString();
+            LinkedList MergedList = new LinkedList();
+            MergedList.Insert(1);
+            MergedList.Insert(2);
+            MergedList.Insert(3);
+            MergedList.Insert(4);
+            MergedList.Insert(5);
+            MergedList.Insert(6);
+
+            string expectedMergedList = "{6} -> {5} -> {4} -> {3} -> {2} -> {1} -> NULL";
 
             // Assert
-            Assert.Equal(expected, actual);
+            Assert.Equal(expectedMergedList,MergedList.ToString());
         }
+        
+
     }
 }
