@@ -83,5 +83,29 @@ namespace LinkedListMerge.Test
 
             Assert.Equal(linkedListOne.ToString(), MergeList.ToString());
         }
+        [Fact]
+        public void ReturnOtherListIfOneIsNull()
+        {
+
+
+            LinkedList nullListOne = new LinkedList();
+
+            LinkedList newestNotNullList = new LinkedList();
+            newestNotNullList.Includes(0);
+            newestNotNullList.Includes(1);
+            newestNotNullList.Includes(2);
+            newestNotNullList.Includes(3);
+            newestNotNullList.Includes(4);
+
+
+            LinkedList MergeList = LLMerge.Merge(newestNotNullList, nullListOne);
+            MergeList.Includes(0);
+            MergeList.Includes(1);
+            MergeList.Includes(2);
+            MergeList.Includes(3);
+            MergeList.Includes(4);
+
+            Assert.Equal(newestNotNullList.ToString(), MergeList.ToString());
+        }
     }
 }
