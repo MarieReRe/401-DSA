@@ -1,5 +1,7 @@
 # 401 Data Structures and Algorithms
 
+![.NET Core](https://github.com/mrsantons/401-DSA/workflows/.NET%20Core/badge.svg)
+
 ## Day 1 Challenge: Reverse an Array
 For this challenge we are tasked with taking an array and reversing that input without altering the original array or using the built in method of Array.Reverse(). 
 #### Challenge Start: 1:15pm
