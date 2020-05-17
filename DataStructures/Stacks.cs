@@ -60,6 +60,11 @@ namespace DataStructures
 
         }
 
+        public T Peek()
+        {
+            if (Top is null) throw new InvalidOperationException("Cannot peek on an empty stack!"); 
+            return Top.Value;
+        }
 
     }
 }

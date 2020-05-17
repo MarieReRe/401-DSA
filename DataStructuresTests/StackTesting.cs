@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Xunit;
 
 namespace DataStructuresTests
@@ -11,6 +12,15 @@ namespace DataStructuresTests
         public void WeCanMakeAnEmptyStack()
         {
             Stack newStack = new Stack();
+            Assert.Empty(newStack);
+        }
+
+        [Fact]
+        public void CanEmptyTheStack()
+        {
+            Stack<int> newStack = new Stack<int>();
+            newStack.Push(1);
+            newStack.Pop();
             Assert.Empty(newStack);
         }
 
@@ -53,22 +63,6 @@ namespace DataStructuresTests
         }
 
 
-        [Fact]
-        public void CanPopManyOffStack()
-        {
-            Stack newStack = new Stack();
-            newStack.Push(3);
-            newStack.Push(6);
-            newStack.Push(9);
-            newStack.Push(12);
-
-            newStack.Pop();
-            newStack.Pop();
-            string expected = newStack.ToString();
-
-            Assert.Equal(expected, newStack.Equals(6));
-
-        }
 
         /* ----------------------------- PEEK TESTING ----------------------------------------- */
 
