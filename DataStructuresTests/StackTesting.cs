@@ -26,5 +26,20 @@ namespace DataStructuresTests
 
             Assert.Equal(1, newStack.Push(1));
         }
+
+        [Fact]
+        public void WeCanPushManyItemsToStack()
+        {
+            Stack newStack = new Stack();
+            newStack.Push(1);
+            newStack.Push(2);
+            newStack.Push(3);
+            newStack.Push(4);
+            newStack.Push(5);
+
+
+            Assert.Equal(4, newStack.Push(6));
+
+        }
     }
 }
