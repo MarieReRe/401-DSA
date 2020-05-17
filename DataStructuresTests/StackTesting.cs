@@ -41,5 +41,17 @@ namespace DataStructuresTests
             Assert.Equal(6, newStack.Push(6));
 
         }
+        /* ----------------------------- POP TESTING ----------------------------------------- */
+        [Fact]
+        public void CanWePopFromStack()
+        {
+            Stack newStack = new Stack();
+            newStack.Push(3);
+
+            Assert.Equal(3, newStack.Pop());
+
+        }
+
+
     }
 }

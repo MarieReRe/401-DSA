@@ -84,5 +84,25 @@ namespace DataStructures
             //return how many in the stack
             return count;
         }
+
+        /*______________________________POP OFF STACK_____________________________________________________________ */
+        public int Pop()
+        {
+            // First we want to check if the top is Null, if it is we should throw an exception this wont show since it is not a console app
+            if (top == null)
+            {
+                throw new InvalidOperationException("This is an empty stack");
+            }
+            else
+            {
+                int poppedValue = top.Value;
+                top = top.Next;
+                // decrease stack count value since we pop off a value
+                count--;
+                return poppedValue;
+            }
+
+        }
+
     }
 }
