@@ -29,7 +29,7 @@ namespace DataStructuresTests
             Queue<int> newQueue = new Queue<int>();
             newQueue.Enqueue(1);
 
-            Assert.Contains(5, newQueue);
+            Assert.Contains(1, newQueue);
 
         }
     }
