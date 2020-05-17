@@ -28,6 +28,12 @@ namespace DataStructures
 
         /*--------------------------------------------- QUEUE START---------
         -------------------------------------------------------------------*/
+
+
+        public bool IsEmpty()
+        {
+            return false;
+        }
         public void Enqueue(T value)
         {
             Node<T> newNode = new Node<T>(value);
@@ -53,5 +59,8 @@ namespace DataStructures
             Front = Front.Next;
 
         }
+
+
+
     }
 }

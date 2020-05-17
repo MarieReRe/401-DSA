@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Text;
 using Xunit;
 
@@ -24,7 +25,14 @@ namespace DataStructuresTests
     public class QueueTesting
     {
 
+        [Fact]
+        public void InstantiateEmptyQueue()
+        {
 
+            Queue<int> newQueue = new Queue<int>();
+            Assert.Empty(newQueue);
+          
+        }
 
         /*_________________________ENQUEUE TESTS_____________________*/
         [Fact]
@@ -60,9 +68,23 @@ namespace DataStructuresTests
           
             
 
-            Assert.Equal(13, newQueue.Dequeue());
+            Assert.Equal(1, newQueue.Dequeue());
         }
 
+
+        [Fact]
+        public void CanEmptyQueueWithMultipleDequeues()
+        {
+            Queue<int> newQueue = new Queue<int>();
+            newQueue.Enqueue(1);
+            newQueue.Enqueue(2);
+            newQueue.Enqueue(3);
+            newQueue.Dequeue();
+            newQueue.Dequeue();
+
+            Assert.Contains(3, newQueue);
+
+        }
 
 
         /*_________________________PEEK TESTS_____________________*/
