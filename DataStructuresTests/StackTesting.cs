@@ -8,6 +8,17 @@ namespace DataStructuresTests
 {
     public class StackTesting
     {
+
+        /*----------------------------------STACK TESTING-----------------------------------------*/
+        [Fact]
+        public void WeCanMakeAnEmptyStack()
+        {
+            Stack newStack = new Stack();
+            Assert.True(newStack.IsEmpty());
+        }
+
+
+        /* -----------------------------PUSH TESTING----------------------------------------- */
         [Fact]
         public void PushToStack()
         {
