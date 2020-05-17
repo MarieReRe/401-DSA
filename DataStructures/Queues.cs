@@ -6,9 +6,9 @@ namespace DataStructures
 {
     public class Queues<T>
     {
-        private Node<T> Front = null;
-        private Node<T> Rear = null;
-       
+        Node<T> Front = null;
+        Node<T> Rear = null;
+
 
         public class Node<T>
         {
@@ -41,6 +41,17 @@ namespace DataStructures
             {
                 Rear = newNode;
             }
+        }
+
+
+        public void Dequeue()
+        {
+            
+            if(Front == null) throw new InvalidOperationException("This Queue is empty");
+            Node<T> node = Front;
+            if (Front == Rear) Rear = Rear.Next;
+            Front = Front.Next;
+
         }
     }
 }

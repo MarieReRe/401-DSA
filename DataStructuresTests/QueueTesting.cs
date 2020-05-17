@@ -9,7 +9,7 @@ namespace DataStructuresTests
 
     /*----------------------------------QUEUE TESTING
                    [x] 1. Can successfully enqueue into a queue
-                   [] 2. Can successfully enqueue multiple values into a queue
+                   [x] 2. Can successfully enqueue multiple values into a queue
                    [] 3. Can successfully dequeue out of a queue the expected value
                    [] 4. Can successfully peek into a queue, seeing the expected value
                    [] 5. Can successfully empty a queue after multiple dequeues
@@ -51,6 +51,19 @@ namespace DataStructuresTests
 
 
         /*_________________________DEQUEUE TESTS_____________________*/
+
+        [Fact]
+        public void CanDequeueFromQueue()
+        {
+            Queue<int> newQueue = new Queue<int>();
+            newQueue.Enqueue(1);
+          
+            
+
+            Assert.Equal(13, newQueue.Dequeue());
+        }
+
+
 
         /*_________________________PEEK TESTS_____________________*/
     }

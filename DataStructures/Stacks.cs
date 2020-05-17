@@ -54,13 +54,13 @@ namespace DataStructures
             Top = node;
         }
         /*______________________________POP OFF STACK_____________________________________________________________ */
-        public T Pop()
+        public void Pop()
         {
             if (Top == null) 
                 throw new InvalidOperationException("Cannot pop from an empty stack!");
             Node<T> node = Top;
             Top = Top.Next;
-            return node.Value;
+            
 
         }
 
