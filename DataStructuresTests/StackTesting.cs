@@ -16,7 +16,7 @@ namespace DataStructuresTests
                     [x] 4. Can successfully empty a stack after multiple pops
                     [x] 5. Can successfully peek the next item on the stack
                     [x] 6. Can successfully instantiate an empty stack
-                    [] 7. Calling pop or peek on empty stack raises exception
+                    [x] 7. Calling pop or peek on empty stack raises exception x2 POP & Peek
             
             
             -----------------------------------------*/
