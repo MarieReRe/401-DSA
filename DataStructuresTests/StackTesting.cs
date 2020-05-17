@@ -38,7 +38,7 @@ namespace DataStructuresTests
             newStack.Push(5);
 
 
-            Assert.Equal(4, newStack.Push(6));
+            Assert.Equal(6, newStack.Push(6));
 
         }
     }
