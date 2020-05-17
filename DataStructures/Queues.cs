@@ -60,6 +60,12 @@ namespace DataStructures
 
         }
 
+        public T Peek()
+        {
+            if (Front == null) throw new InvalidOperationException("This Queue is empty");
+            return Front.Value;
+        }
+
 
 
     }
