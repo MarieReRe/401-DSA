@@ -33,8 +33,12 @@ namespace DataStructures
 
         public bool IsEmpty()
         {
+            
             return false;
         }
+
+
+        
 
 
 
