@@ -23,8 +23,8 @@ namespace Challenges
                 return null;
             }
             //set up our currents to be the Head
-            Node CurrentFirstList = firstList.Head;
-            Node CurrentSecondList = secondList.Head;
+            LinkedList.Node CurrentFirstList = firstList.Head;
+            LinkedList.Node CurrentSecondList = secondList.Head;
 
             //merge one node after the other
             while(CurrentFirstList != null && CurrentSecondList != null)

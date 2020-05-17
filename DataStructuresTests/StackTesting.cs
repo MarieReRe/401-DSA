@@ -6,9 +6,7 @@ using Xunit;
 
 namespace DataStructuresTests
 {
-
-
-    class StackTesting
+    public class StackTesting
     {
         [Fact]
         public void PushToStack()

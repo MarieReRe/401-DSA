@@ -45,5 +45,25 @@ namespace DataStructures
         {
             get => count;
         }
+
+        /*______________________________PUSH TO STACK________________________________________
+        ______________________________________________________________________________________ */
+        public int Push(int value)
+        {
+            //first check if there is a top, if not set it to a new nodes value
+            if (top == null)
+            {
+                top = new Node(value);
+            }
+            else
+            {
+                Node newNode = new Node(value, top);
+            }
+            //add to the stack
+            count++;
+
+            //return how many in the stack
+            return count;
+        }
     }
 }
