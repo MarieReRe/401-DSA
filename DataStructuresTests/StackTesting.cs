@@ -47,9 +47,9 @@ namespace DataStructuresTests
         [Fact]
         public void PushToStack()
         {
-            System.Collections.Generic.Stack<int> newStack = new System.Collections.Generic.Stack<int>();
+            Stack<int> newStack = new Stack<int>();
             newStack.Push(1);
-            Assert.NotNull(newStack);
+            Assert.Contains(1, newStack);
 
         }
 
@@ -61,7 +61,7 @@ namespace DataStructuresTests
             newStack.Push(1);
             newStack.Push(2);
             newStack.Push(3);
-            Assert.NotNull(newStack);
+            Assert.Contains(3, newStack);
         }
 
 

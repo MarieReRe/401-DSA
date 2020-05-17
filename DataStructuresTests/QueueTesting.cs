@@ -8,7 +8,7 @@ namespace DataStructuresTests
 
 
     /*----------------------------------QUEUE TESTING
-                   [] 1. Can successfully enqueue into a queue
+                   [x] 1. Can successfully enqueue into a queue
                    [] 2. Can successfully enqueue multiple values into a queue
                    [] 3. Can successfully dequeue out of a queue the expected value
                    [] 4. Can successfully peek into a queue, seeing the expected value
@@ -23,6 +23,10 @@ namespace DataStructuresTests
 
     public class QueueTesting
     {
+
+
+
+        /*_________________________ENQUEUE TESTS_____________________*/
         [Fact]
         public void CanEnqueueToQueue()
         {
@@ -32,6 +36,23 @@ namespace DataStructuresTests
             Assert.Contains(1, newQueue);
 
         }
+
+        [Fact]
+        public void CanEnqueueMultiple()
+        {
+            Queue<int> newQueue = new Queue<int>();
+            newQueue.Enqueue(1);
+            newQueue.Enqueue(2);
+            newQueue.Enqueue(3);
+           
+            //Assert
+            Assert.Contains(3, newQueue);
+        }
+
+
+        /*_________________________DEQUEUE TESTS_____________________*/
+
+        /*_________________________PEEK TESTS_____________________*/
     }
-   
+
 }
