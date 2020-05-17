@@ -15,7 +15,7 @@ namespace DataStructuresTests
                    [x] 4. Can successfully peek into a queue, seeing the expected value
                    [x] 5. Can successfully empty a queue after multiple dequeues
                    [x] 6. Can successfully instantiate an empty queue
-                   [] 7. Calling dequeue or peek on empty queue raises exception x2 DEQUEUE & PEEK
+                   [x] 7. Calling dequeue or peek on empty queue raises exception x2 DEQUEUE & PEEK
 
 
            -----------------------------------------*/
@@ -83,6 +83,21 @@ namespace DataStructuresTests
             newQueue.Dequeue();
 
             Assert.Contains(3, newQueue);
+
+        }
+
+        [Fact]
+        public void DequeueFromEmptyThrows()
+        {
+            // Arrange
+            Queue<int> newQueue = new Queue<int>();
+
+            // Assert
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                // Act
+                newQueue.Dequeue();
+            });
 
         }
 
