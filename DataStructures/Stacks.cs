@@ -5,57 +5,34 @@ using System.Text;
 namespace DataStructures
 {
 
-    public class Node
+   
+    public class Stack<T>
     {
-        public int Value { get; set; }
-        public Node Next { get; set; }
+        public Node<T> Top { get; set; }
 
-        //initial constructor that adds a link that points to null
-        public Node(int value)
+        public class Node<T>
         {
-            Value = value;
-            Next = null;
+            public T Value { get; set; }
+            public Node<T> Next { get; set; }
+
+            //initial constructor that adds a link that points to null
+            public Node(T value)
+            {
+                Value = value;
+            }
+
         }
-
-        // constructor that points to a value that isn't null
-        public Node(int value, Node next)
-        {
-            Value = value;
-            Next = next;
-        }
+        
 
 
 
-    }
-    public class Stack
-    {
-        public Node top;
-        public int count;
 
-
-        //start off the stack with top set to null and count of zero (empty stack)
-        public Stack()
-        {
-            top = null;
-            count = 0;
-        }
-
-        // getting the value of the stack count 
-        public int Count
-        {
-            get => count;
-        }
 
         /*______________________________CREATE AN EMPTY STACK________________________________________
         ______________________________________________________________________________________ */
 
         public bool IsEmpty()
         {
-            if (count == 0)
-            {
-                return true;
-            }
-
             return false;
         }
 
@@ -67,42 +44,25 @@ namespace DataStructures
 
         /*______________________________PUSH TO STACK________________________________________
         ______________________________________________________________________________________ */
-        public int Push(int value)
+        public void Push(T value)
         {
-            //first check if there is a top, if not set it to a new nodes value
-            if (top == null)
-            {
-                top = new Node(value);
-            }
-            else
-            {
-                Node newNode = new Node(value, top);
-            }
-            //add to the stack
-            count++;
-
-            //return how many in the stack
-            return count;
+            Node<T> node = new Node<T>(value) { Next = Top };
+            Top = node;
         }
-
         /*______________________________POP OFF STACK_____________________________________________________________ */
-        public int Pop()
+        public T Pop()
         {
-            // First we want to check if the top is Null, if it is we should throw an exception this wont show since it is not a console app
-            if (top == null)
-            {
-                throw new InvalidOperationException("This is an empty stack");
-            }
+            if (Top == null) 
+                throw new InvalidOperationException("Cannot pop from an empty stack!");
             else
             {
-                int poppedValue = top.Value;
-                top = top.Next;
-                // decrease stack count value since we pop off a value
-                count--;
-                return poppedValue;
+                Node<T> node = Top;
+                Top = Top.Next;
+                return node.Value;
             }
 
         }
+
 
     }
 }
