@@ -54,12 +54,9 @@ namespace DataStructures
         {
             if (Top == null) 
                 throw new InvalidOperationException("Cannot pop from an empty stack!");
-            else
-            {
-                Node<T> node = Top;
-                Top = Top.Next;
-                return node.Value;
-            }
+            Node<T> node = Top;
+            Top = Top.Next;
+            return node.Value;
 
         }
 
