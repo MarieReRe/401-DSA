@@ -42,7 +42,7 @@ namespace DataStructuresTests
         public void WeCanPushManyItemsToStack()
         {
             
-            System.Collections.Generic.Stack<int> newStack = new System.Collections.Generic.Stack<int>();
+            Stack<int> newStack = new Stack<int>();
             newStack.Push(1);
             newStack.Push(2);
             newStack.Push(3);
@@ -65,7 +65,15 @@ namespace DataStructuresTests
 
 
         /* ----------------------------- PEEK TESTING ----------------------------------------- */
+        [Fact]
+        public void CanPeekIntoStack()
+        {
+            Stack newStack = new Stack();
+            newStack.Push(3);
+             newStack.Peek();
 
+             Assert.Equal(3,newStack.Peek());
+        }
 
     }
 }
