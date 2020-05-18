@@ -71,6 +71,7 @@ namespace DataStructuresTests
         public void CanWePopFromStack()
         {
             Stack newStack = new Stack();
+            newStack.Push(55);
             newStack.Push(3);
 
             Assert.Equal(3, newStack.Pop());

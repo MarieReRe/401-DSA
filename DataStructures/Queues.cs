@@ -50,13 +50,15 @@ namespace DataStructures
         }
 
 
-        public void Dequeue()
+        public T Dequeue()
         {
             
             if(Front == null) throw new InvalidOperationException("This Queue is empty");
             Node<T> node = Front;
             if (Front == Rear) Rear = Rear.Next;
             Front = Front.Next;
+
+            return Front.Value;
 
         }
 
