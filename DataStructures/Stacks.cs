@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using DataStructures;
 using System.Text;
 
 namespace DataStructures
@@ -8,12 +8,12 @@ namespace DataStructures
    
     public class Stack<T>
     {
-        public Node<T> Top { get; set; }
+        public Node Top { get; set; }
 
-        public class Node<T>
+        public class Node
         {
             public T Value { get; set; }
-            public Node<T> Next { get; set; }
+            public Node Next { get; set; }
 
             //initial constructor that adds a link that points to null
             public Node(T value)
@@ -50,7 +50,7 @@ namespace DataStructures
         ______________________________________________________________________________________ */
         public void Push(T value)
         {
-            Node<T> node = new Node<T>(value) { Next = Top };
+            Node node = new Node(value) { Next = Top };
             Top = node;
         }
         /*______________________________POP OFF STACK_____________________________________________________________ */
@@ -58,7 +58,7 @@ namespace DataStructures
         {
             if (Top == null) 
                 throw new InvalidOperationException("Cannot pop from an empty stack!");
-            Node<T> node = Top;
+            Node node = Top;
             Top = Top.Next;
             
 
