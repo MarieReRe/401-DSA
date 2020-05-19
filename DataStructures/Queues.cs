@@ -6,16 +6,16 @@ namespace DataStructures
 {
     public class Queues<T>
     {
-        Node<T> Front = null;
-        Node<T> Rear = null;
+        Node Front = null;
+        Node Rear = null;
 
 
-        public class Node<T>
+        public class Node
         {
-            public Node<T> Front { get; set; }
-            public Node<T> Rear { get; set; }
+            public Node Front { get; set; }
+            public Node Rear { get; set; }
             public T Value { get; set; }
-            public Node<T> Next { get; set; }
+            public Node Next { get; set; }
 
             //initial constructor that adds a link that points to null
             public Node(T value)
@@ -36,7 +36,7 @@ namespace DataStructures
         }
         public void Enqueue(T value)
         {
-            Node<T> newNode = new Node<T>(value);
+            Node newNode = new Node(value);
             if (Rear != null)
             {
                 newNode.Value = value;
@@ -54,7 +54,7 @@ namespace DataStructures
         {
             
             if(Front == null) throw new InvalidOperationException("This Queue is empty");
-            Node<T> node = Front;
+            Node node = Front;
             if (Front == Rear) Rear = Rear.Next;
             Front = Front.Next;
 

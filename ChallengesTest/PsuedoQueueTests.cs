@@ -1,28 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
 using System.Text;
 using Xunit;
 
-namespace DataStructuresTests
+namespace ChallengesTest
 {
 
-
     /*----------------------------------QUEUE TESTING
-                   [x] 1. Can successfully enqueue into a queue
-                   [x] 2. Can successfully enqueue multiple values into a queue
-                   [x] 3. Can successfully dequeue out of a queue the expected value
-                   [x] 4. Can successfully peek into a queue, seeing the expected value
-                   [x] 5. Can successfully empty a queue after multiple dequeues
-                   [x] 6. Can successfully instantiate an empty queue
-                   [x] 7. Calling dequeue or peek on empty queue raises exception x2 DEQUEUE & PEEK
+                  [] 1. Can successfully enqueue into a queue
+                  [] 2. Can successfully enqueue multiple values into a queue
+                  [] 3. Can successfully dequeue out of a queue the expected value
+                  [] 4. Can successfully peek into a queue, seeing the expected value
+                  [] 5. Can successfully empty a queue after multiple dequeues
+                  [] 6. Can successfully instantiate an empty queue
+                  [] 7. Calling dequeue or peek on empty queue raises exception x2 DEQUEUE & PEEK
 
 
-           -----------------------------------------*/
-
-
-
-    public class QueueTesting
+          -----------------------------------------*/
+    public class PsuedoQueueTests
     {
 
         [Fact]
@@ -31,10 +26,8 @@ namespace DataStructuresTests
 
             Queue<int> newQueue = new Queue<int>();
             Assert.Empty(newQueue);
-          
-        }
 
-        /*_________________________ENQUEUE TESTS_____________________*/
+        }
         [Fact]
         public void CanEnqueueToQueue()
         {
@@ -52,21 +45,17 @@ namespace DataStructuresTests
             newQueue.Enqueue(1);
             newQueue.Enqueue(2);
             newQueue.Enqueue(3);
-           
+
             //Assert
             Assert.Contains(3, newQueue);
         }
-
-
-        /*_________________________DEQUEUE TESTS_____________________*/
-
         [Fact]
         public void CanDequeueFromQueue()
         {
             Queue<int> newQueue = new Queue<int>();
             newQueue.Enqueue(1);
-          
-            
+
+
 
             Assert.Equal(1, newQueue.Dequeue());
         }
@@ -133,6 +122,9 @@ namespace DataStructuresTests
             // how do we peek and see multiple values, is that possible?
 
         }
-    }
 
+
+
+
+    }
 }
