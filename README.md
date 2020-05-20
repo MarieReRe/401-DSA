@@ -8,7 +8,7 @@ This is a daily code challenges project that includes various challenges Through
 ## Getting Started
 Clone this repository to your local machine.
 
-$ git clone []
+$ git clone [https://github.com/mrsantons/401-DSA.git]
 
 To run the program from Visual Studio:
 Select File -> Open -> Project/Solution
