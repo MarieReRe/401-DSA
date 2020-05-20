@@ -19,3 +19,5 @@ This approach would be of linear time complexity which is O(n). This is because 
 ### Solution: 
 ![White Boarding Solution](https://github.com/mrsantons/401-DSA/blob/master/assets/reverseArrayWhiteboard.jpg)
 
+<hr/>
+
