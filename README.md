@@ -2,6 +2,26 @@
 
 ![.NET Core](https://github.com/mrsantons/401-DSA/workflows/.NET%20Core/badge.svg)
 
+## Description
+This is a daily code challenges project that includes various challenges Through DeltaV Code School.
+
+## Getting Started
+Clone this repository to your local machine.
+
+$ git clone []
+
+To run the program from Visual Studio:
+Select File -> Open -> Project/Solution
+
+Next navigate to the location you cloned the Repository.
+
+Double click on the challenges or DSA directory.
+
+Then select and open the program you want to view.
+
+## To Run This Program
+Open the program using Visual Studio and click "Start" button to run this program.
+
 ## Day 1 Challenge: Reverse an Array
 ### White Boarding Partner Matt 
 For this challenge we are tasked with taking an array and reversing that input without altering the original array or using the built in method of Array.Reverse(). 
@@ -21,6 +41,7 @@ This approach would be of linear time complexity which is O(n). This is because 
 ![White Boarding Solution](https://github.com/mrsantons/401-DSA/blob/master/assets/reverseArrayWhiteboard.jpg)
 
 <hr/>
+
 ## Day 2 Challenge: Array Shift
 ### White Boarding Partner Craig
 
@@ -38,4 +59,12 @@ This approach would be of linear time complexity which is O(n). This is because 
 
 ### Description 
 Write a function to add up the sum of each row in a matrix of arbitrary size, and return an array with the appropriate values.
+
+
+<hr/>
+
+## Day 5 Challenge Linked List Implementation
+
+
+
 
