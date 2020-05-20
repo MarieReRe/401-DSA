@@ -26,11 +26,13 @@ This approach would be of linear time complexity which is O(n). This is because 
 
 
 <hr/>
+
 ## Day 3 Challenge
 ### White Boarding Partner Stacey
 
 
 <hr/>
+
 ## Day 4 Challenge: Mock Interview 
 ### Mock Interviewer: Chase
 
