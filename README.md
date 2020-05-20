@@ -65,6 +65,48 @@ Write a function to add up the sum of each row in a matrix of arbitrary size, an
 
 ## Day 5 Challenge Linked List Implementation
 
+<hr/>
+
+## Day 6
+## White Boarding Partner Sihem
+
+<hr/>
+
+## Day 7
+## White Boarding Partner Brennan
+
+<hr/>
+
+## Day 8
+## White Boarding Partner Francesco
+
+<hr/>
+
+## Day 9 Challenge: Mock Interview
+## Mock Interviewer: Ian (TA)
+
+
+<hr/>
+
+## Day 10
+
+<hr/>
+
+## Day 11
+## White Boarding Partner Stacey
+
+<hr/>
+
+## Day 12
+## White Boarding Partner Sihem
+
+
+
+<hr/>
+
+## Day 13
+## White Boarding Partner Matt
+
 
 
 
