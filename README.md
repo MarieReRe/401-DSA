@@ -3,11 +3,12 @@
 ![.NET Core](https://github.com/mrsantons/401-DSA/workflows/.NET%20Core/badge.svg)
 
 ## Day 1 Challenge: Reverse an Array
+### White Boarding Partner Matt 
 For this challenge we are tasked with taking an array and reversing that input without altering the original array or using the built in method of Array.Reverse(). 
 #### Challenge Start: 1:15pm
 #### Challenge End: 2:45pm
 #### Total Time: 2.5 hours
-### Challenge
+### Description
 Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
 ### Possible Stretch Goal
@@ -20,4 +21,19 @@ This approach would be of linear time complexity which is O(n). This is because 
 ![White Boarding Solution](https://github.com/mrsantons/401-DSA/blob/master/assets/reverseArrayWhiteboard.jpg)
 
 <hr/>
+## Day 2 Challenge: Array Shift
+### White Boarding Partner Craig
+
+
+<hr/>
+## Day 3 Challenge
+### White Boarding Partner Stacey
+
+
+<hr/>
+## Day 4 Challenge: Mock Interview 
+### Mock Interviewer: Chase
+
+### Description 
+Write a function to add up the sum of each row in a matrix of arbitrary size, and return an array with the appropriate values.
 
