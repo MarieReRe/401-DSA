@@ -62,22 +62,41 @@ namespace DataStructures.Trees
         //left, root, right
         public IEnumerable<T> InOrder(Node Root)
         {
+            if (Root is null) yield break;
             if (Root != null)
             {
-                InOrder(Root.Left);
+                foreach(T item in InOrder(Root.Left))
+                {
+                    yield return item;
+                }
                 yield return Root.Value;
-                InOrder(Root.Right);
+
+                foreach (T item in InOrder(Root.Right))
+                {
+                    yield return item;
+                }
+
+
+
             }
         }
 
         //left, right, root
         public IEnumerable<T> PostOrder(Node Root)
         {
+            if (Root is null) yield break;
             if (Root != null)
             {
-                PostOrder(Root.Left);
-                PostOrder(Root.Right);
+                foreach (T item in InOrder(Root.Left))
+                {
+                    yield return item;
+                }
+                foreach (T item in InOrder(Root.Right))
+                {
+                    yield return item;
+                }
                 yield return Root.Value;
+
             }
         }
 
