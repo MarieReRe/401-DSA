@@ -12,7 +12,7 @@ namespace DataStructuresTests
      __________ [x] 1. Can successfully instantiate an empty tree
      __________ [x] 2. Can successfully instantiate a tree with a single root                node
      __________ [x] 3. Can successfully add a left child and right child to a                single root node
-    __________  [] 4. Can successfully return a collection from a preorder                   traversal
+    __________  [x] 4. Can successfully return a collection from a preorder                   traversal
       __________ [] 5.Can successfully return a collection from an inorder                 traversal
       __________ [] 6. Can successfully return a collection from a postorder               traversal _____________________________________________*/
     public class BinarySearchTreeTesting
@@ -94,6 +94,26 @@ namespace DataStructuresTests
             Assert.Equal(expected[3], newTree.Root.Right.Value);
             Assert.Equal(expected[4], newTree.Root.Right.Right.Value);
 
+        }
+        [Fact]
+        public void CanReturnInOrder()
+        {
+            BinarySearchTree<string> newTree = new BinarySearchTree<string>();
+            newTree.Add("Carrots");
+            newTree.Add("Apples");
+            newTree.Add("Bananas");
+            newTree.Add("Durian");
+            newTree.Add("Eggplant");
+
+            List<string> expected = new List<string>()
+            {
+               "Apples",
+               "Bananas",
+               "Carrots",
+               "Durian",
+               "Eggplant"
+            };
+            Assert.Equal(expected[2], newTree.Root.Value);
         }
     }
 }
