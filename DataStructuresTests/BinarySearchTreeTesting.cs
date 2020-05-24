@@ -19,14 +19,11 @@ namespace DataStructuresTests
         [Fact]
         public void CanInstantiateEmptyTree()
         {
-            var testTree = new BinaryTree<string>();
-
-    
-
-
-
+            BinaryTree<int> binaryTree = new BinaryTree<int>();
+          
             //assert
-            Assert.NotEmpty(testTree);
+            Assert.Null(binaryTree.Root);
+           
 
         }
         [Fact]
@@ -35,11 +32,12 @@ namespace DataStructuresTests
             //arrange
             BinarySearchTree<int> newNode = new BinarySearchTree<int>();
 
-            newNode.Root = new Node<int>(3);
+            newNode.Add(2);
+            int expected = 2;
 
 
             //Assert
-            Assert.Equal(new int[] { 3 }, newNode.PreOrder());
+            Assert.Equal(expected, newNode.Root.Value);
 
 
 

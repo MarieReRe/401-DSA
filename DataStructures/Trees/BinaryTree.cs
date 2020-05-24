@@ -20,7 +20,7 @@ namespace DataStructures.Trees
     public class BinaryTree<T> : BinarySearchTree<T> where T : IComparable<T>
     {
       
-        public List<T> PreOrder(Node Root)
+        public IEnumerable<T> PreOrder(Node Root)
         {
             if (Root != null)
             {
@@ -28,10 +28,7 @@ namespace DataStructures.Trees
                 PreOrder(Root.Left);
                 PreOrder(Root.Right);
             }
-            else
-            {
-              
-            }
+          
         }
 
 
