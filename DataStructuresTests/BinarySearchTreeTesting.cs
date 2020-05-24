@@ -116,6 +116,7 @@ namespace DataStructuresTests
             Assert.Equal(expected[2], newTree.Root.Value);
             Assert.Equal(expected[0], newTree.Root.Left.Value);
             Assert.Equal(expected[1], newTree.Root.Left.Right.Value);
+            Assert.Equal(expected[3], newTree.Root.Right.Value);
         }
     }
 }
