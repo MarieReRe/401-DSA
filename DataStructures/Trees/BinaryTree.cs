@@ -6,9 +6,9 @@ using System.Text;
 namespace DataStructures.Trees
 {
     /* METHODS NEEDED:
-     * [] 1. PreOrder
-     * [] 2. InOrder
-     * [] 3. PostOrder
+     * [x] 1. PreOrder
+     * [x] 2. InOrder
+     * [x] 3. PostOrder
      */
 
     /* For AddRange
@@ -17,20 +17,73 @@ namespace DataStructures.Trees
      */
 
    
-    public class BinaryTree<T> : BinarySearchTree<T> where T : IComparable<T>
+    public class BinaryTree<T> where T : IComparable<T>
     {
-      
+
+        public class Node
+        {
+            public Node Left { get; set; }
+            public Node Right { get; set; }
+            public T Value { get; set; }
+
+            public Node Root { get; set; }
+
+        }
+
+
+        public Node Root;
+        public BinaryTree()
+        {
+            Root = null;
+        }
+
+        //root, left, right
         public IEnumerable<T> PreOrder(Node Root)
         {
+            if (Root is null) yield break;
             if (Root != null)
             {
-                yield return Root.Value;
-                PreOrder(Root.Left);
-                PreOrder(Root.Right);
+
+               
+                foreach(T item in PreOrder(Root.Left))
+                {
+                    yield return item;
+                }
+                foreach (T item in PreOrder(Root.Right))
+                {
+                    yield return item;
+                }
+
             }
           
         }
 
 
+        //left, root, right
+        public IEnumerable<T> InOrder(Node Root)
+        {
+            if (Root != null)
+            {
+                InOrder(Root.Left);
+                yield return Root.Value;
+                InOrder(Root.Right);
+            }
+        }
+
+        //left, right, root
+        public IEnumerable<T> PostOrder(Node Root)
+        {
+            if (Root != null)
+            {
+                PostOrder(Root.Left);
+                PostOrder(Root.Right);
+                yield return Root.Value;
+            }
+        }
+
+
+
+
+       
     }
 }

@@ -10,26 +10,11 @@ namespace DataStructures.Trees
      */
    
 
-    public class BinarySearchTree<T>  where T : IComparable<T>
+    public class BinarySearchTree<T> : BinaryTree<T> where T : IComparable<T>
     {
 
 
-        public class Node
-        {
-            public Node Left { get; set; }
-            public Node Right { get; set; }
-            public T Value { get; set; }
-
-            public Node Root { get; set; }
-            
-        }
-
-
-        public Node Root;
-        public BinarySearchTree()
-        {
-            Root = null;
-        }
+       
 
 
         // ADD METHOD
@@ -41,7 +26,7 @@ namespace DataStructures.Trees
             Node newNode = new Node();
             newNode.Value = valueToBeAdded;
 
-            if (Root is null) Root = newNode;
+            if (Root == null) Root = newNode;
             else
             {
                 // Set current node to root
@@ -56,7 +41,7 @@ namespace DataStructures.Trees
                     {
                         current = current.Left;
                         //check if current is null
-                        if(current is null)
+                        if(current == null)
                         {
                             parentNode.Left = newNode;
                             return;
@@ -65,7 +50,7 @@ namespace DataStructures.Trees
                     else
                     {
                         current = current.Right; 
-                        if(current is null)
+                        if(current == null)
                         {
                             parentNode.Right = newNode;
                             return;
@@ -78,31 +63,30 @@ namespace DataStructures.Trees
                 
             }
         }
-        public bool Contains(Node node, T value)
+        public bool Contains(Node root, T value)
         {
-            if (node is null)
+
+
+            while(root != null)
             {
-                return false;
-            }
-            else
-            {
-                if (node.Value.Equals(value))
+                if (root.Value.Equals(value)) return true;
+                else if (root.Value.CompareTo(value) > 0)
                 {
-                    return true;
+                    return Contains(root.Left, value);
                 }
-                    
-                else if (node.Value.CompareTo(value) > 0)
-                {
-                    return Contains(node.Left, value);
-                }
-                else
-                    return Contains(node.Right, value);
+                else return Contains(root.Right, value);
 
             }
-       
+            return false;
+
+
+
+
+           
 
           
 
         }
+      
     }
 }
