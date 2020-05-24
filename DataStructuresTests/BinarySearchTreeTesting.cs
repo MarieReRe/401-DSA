@@ -125,7 +125,7 @@ namespace DataStructuresTests
             BinarySearchTree<int> newTree = new BinarySearchTree<int>();
             newTree.Add(30);
             newTree.Add(35);
-            newTree.Add(57);
+            newTree.Add(10);
             newTree.Add(15);
             newTree.Add(63);
 
@@ -134,15 +134,15 @@ namespace DataStructuresTests
 
             List<int> expected = new List<int>()
             {
+                10,
                15,
                63,
-               57,
                35,
                30 //root
             };
             Assert.Equal(expected[4], newTree.Root.Value);
             Assert.Equal(expected[0], newTree.Root.Left.Value);
-          //  Assert.Equal(expected[1], newTree.Root.Left.Right.Value);
+            Assert.Equal(expected[1], newTree.Root.Left.Right.Value);
            // Assert.Equal(expected[3], newTree.Root.Right.Value);
           //  Assert.Equal(expected[4], newTree.Root.Right.Right.Value);
 
