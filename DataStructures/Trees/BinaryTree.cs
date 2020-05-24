@@ -41,6 +41,7 @@ namespace DataStructures.Trees
         public IEnumerable<T> PreOrder(Node Root)
         {
             if (Root is null) yield break;
+           yield return Root.Value;
             if (Root != null)
             {
 

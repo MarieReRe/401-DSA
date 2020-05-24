@@ -13,7 +13,7 @@ namespace DataStructuresTests
      __________ [x] 2. Can successfully instantiate a tree with a single root                node
      __________ [x] 3. Can successfully add a left child and right child to a                single root node
     __________  [x] 4. Can successfully return a collection from a preorder                   traversal
-      __________ [] 5.Can successfully return a collection from an inorder                 traversal
+      __________ [x] 5.Can successfully return a collection from an inorder                 traversal
       __________ [] 6. Can successfully return a collection from a postorder               traversal _____________________________________________*/
     public class BinarySearchTreeTesting
     {
@@ -21,10 +21,10 @@ namespace DataStructuresTests
         public void CanInstantiateEmptyTree()
         {
             BinaryTree<int> binaryTree = new BinaryTree<int>();
-          
+
             //assert
             Assert.Null(binaryTree.Root);
-           
+
 
         }
         [Fact]
@@ -45,7 +45,7 @@ namespace DataStructuresTests
         public void CanAddLeftAndRightChildren()
         {
             BinarySearchTree<string> newTree = new BinarySearchTree<string>();
-          
+
             newTree.Add("Im the root");
             newTree.Add("HiImLeftSide");
             newTree.Add("Righty");
@@ -57,11 +57,11 @@ namespace DataStructuresTests
                 "Righty"
             };
 
-          
+
             // Assert
             Assert.Equal(expected[1], newTree.Root.Value);
             Assert.Equal(expected[0], newTree.Root.Left.Value);
-            Assert.Equal(expected[2], newTree.Root.Right.Value); 
+            Assert.Equal(expected[2], newTree.Root.Right.Value);
         }
         [Fact]
         public void CanReturnPreOrder()
@@ -73,9 +73,9 @@ namespace DataStructuresTests
             newTree.Add("Bananas");
             newTree.Add("Durian");
             newTree.Add("Eggplant");
-           
-            
-            
+
+
+
 
             List<string> expected = new List<string>()
             {
@@ -118,6 +118,37 @@ namespace DataStructuresTests
             Assert.Equal(expected[1], newTree.Root.Left.Right.Value);
             Assert.Equal(expected[3], newTree.Root.Right.Value);
             Assert.Equal(expected[4], newTree.Root.Right.Right.Value);
+        }
+        [Fact]
+        public void CanReturnPostOrder()
+        {
+            BinarySearchTree<int> newTree = new BinarySearchTree<int>();
+            newTree.Add(30);
+            newTree.Add(35);
+            newTree.Add(57);
+            newTree.Add(15);
+            newTree.Add(63);
+
+
+
+
+            List<int> expected = new List<int>()
+            {
+               15,
+               63,
+               57,
+               35,
+               30 //root
+            };
+            Assert.Equal(expected[4], newTree.Root.Value);
+           // Assert.Equal(expected[1], newTree.Root.Left.Value);
+          //  Assert.Equal(expected[1], newTree.Root.Left.Right.Value);
+           // Assert.Equal(expected[3], newTree.Root.Right.Value);
+          //  Assert.Equal(expected[4], newTree.Root.Right.Right.Value);
+
+
+
+
         }
     }
 }
