@@ -7,6 +7,7 @@ using Xunit;
 
 namespace ChallengesTest
 {
+
     public class MultibracketTests
     {
         [Theory]
@@ -23,9 +24,6 @@ namespace ChallengesTest
             bool actual = MultiBracket.IsMatched(input);
 
             Assert.Equal(expected, actual);
-
-
-
 
         }
 
