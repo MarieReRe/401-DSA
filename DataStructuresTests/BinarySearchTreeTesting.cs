@@ -56,7 +56,7 @@ namespace DataStructuresTests
                 "Im the root",
                 "Righty"
             };
-
+       
 
             // Assert
             Assert.Equal(expected[1], newTree.Root.Value);
@@ -148,6 +148,28 @@ namespace DataStructuresTests
 
 
 
+
+        }
+
+        [Fact]
+        public void TreeContainsValue()
+        {
+            BinarySearchTree<int> newTree = new BinarySearchTree<int>();
+            newTree.Add(1);
+            newTree.Add(15);
+            newTree.Add(30);
+            newTree.Add(5);
+            newTree.Add(3);
+            newTree.Add(9);
+            newTree.Add(6);
+            newTree.Add(10);
+            newTree.Add(135);
+            newTree.Add(67);
+
+            IEnumerable<int> actual = newTree.PreOrder(newTree.ReturnRoot());
+
+
+            Assert.Contains(6, actual);
 
         }
     }
