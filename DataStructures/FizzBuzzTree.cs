@@ -64,36 +64,36 @@ namespace DataStructures
                     //If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
                     node.Value = "FizzBuzz";
                     traversal.Add(node.Value);
-                
+                    count++;
                 }
                 else if (Convert.ToInt32(node.Value) % 3 == 0)
                 {
                     //If the value is divisible by 3, replace the value with “Fizz”
                     node.Value = "Fizz";
                     traversal.Add(node.Value);
-                  
+                    count++;
                 }
                 else if (Convert.ToInt32(node.Value) % 5 == 0)
                 {
                     //If the value is divisible by 5, replace the value with “Buzz”
                     node.Value = "Buzz";
                     traversal.Add(node.Value);
-                    
+                    count++;
                 }
                 else
                 {
                     traversal.Add(node.Value);
-                    return totalNodes; 
+                    count++;
                 }
                 
             //return the count
-               
+                return count;
             }
             catch (NullReferenceException ex)
             {
                
                 Console.WriteLine(ex.Message);
-             
+                return count;
             }
         }
 
