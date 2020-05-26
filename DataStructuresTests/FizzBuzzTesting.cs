@@ -10,6 +10,9 @@ namespace DataStructuresTests
     /*-------------------------------------------------FIZZBUZZ TESTING: 
                     [] 1. Instantiate empty tree 
                     [] 2. Create tree starting with an int
+                    [] 3. Create tree with string
+                    [] 4. Return tree with strings and ints
+                    [] 5. Add Left and Right Children
 -------------------------------------------------------------------------------------------------------------------------------------*/
     public class FizzBuzzTesting
     {
@@ -28,8 +31,8 @@ namespace DataStructuresTests
         [Fact]
         public void CanInstantiateTreeWithString()
         {
-            Tree<object> tree = new Tree<object>("Marie");
-            Assert.Equal("Marie", tree.Root.Value);
+            Tree<object> newTree = new Tree<object>("Marie");
+            Assert.Equal("Marie", newTree.Root.Value);
         }
 
     }
