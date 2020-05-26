@@ -8,9 +8,9 @@ namespace DataStructuresTests
 {
 
     /*-------------------------------------------------FIZZBUZZ TESTING: 
-                    [] 1. Instantiate empty tree 
-                    [] 2. Create tree starting with an int
-                    [] 3. Create tree with string
+                    [x] 1. Instantiate empty tree 
+                    [x] 2. Create tree starting with an int
+                    [x] 3. Create tree with string
                     [] 4. Return tree with strings and ints
                     [] 5. Add Left and Right Children
 -------------------------------------------------------------------------------------------------------------------------------------*/
