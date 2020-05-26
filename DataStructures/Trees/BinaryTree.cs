@@ -36,6 +36,10 @@ namespace DataStructures.Trees
         {
             Root = null;
         }
+        public Node ReturnRoot()
+        {
+            return Root;
+        }
 
         //root, left, right
         public IEnumerable<T> PreOrder(Node Root)
