@@ -1,6 +1,6 @@
 # 401 Data Structures and Algorithms
 
-![.NET Core](https://github.com/mrsantons/401-DSA/workflows/.NET%20Core/badge.svg)
+![.NET Core](https://github.com/mrsantons/401-DSA/workflows/.NET%20Core/badge.svg?branch=master)
 
 ## Description
 This is a daily code challenges project that includes various challenges Through DeltaV Code School.
