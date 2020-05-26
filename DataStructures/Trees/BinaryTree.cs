@@ -45,11 +45,9 @@ namespace DataStructures.Trees
         public IEnumerable<T> PreOrder(Node Root)
         {
             if (Root is null) yield break;
-           yield return Root.Value;
-            if (Root != null)
-            {
 
-               
+           yield return Root.Value;
+
                 foreach(T item in PreOrder(Root.Left))
                 {
                     yield return item;
@@ -58,9 +56,7 @@ namespace DataStructures.Trees
                 {
                     yield return item;
                 }
-
-            }
-          
+ 
         }
 
 
