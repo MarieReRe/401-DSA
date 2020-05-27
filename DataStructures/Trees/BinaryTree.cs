@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
 using System.Text;
 
+
 namespace DataStructures.Trees
 {
     /* METHODS NEEDED:
@@ -16,10 +17,9 @@ namespace DataStructures.Trees
      * https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.addrange?view=netcore-3.1
      */
 
-   
+  
     public class BinaryTree<T> where T : IComparable<T>
     {
-
         public class Node
         {
             public Node Left { get; set; }
@@ -29,6 +29,7 @@ namespace DataStructures.Trees
             public Node Root { get; set; }
 
         }
+
 
 
         public Node Root;
@@ -99,6 +100,27 @@ namespace DataStructures.Trees
                 yield return Root.Value;
 
             }
+        }
+
+        public IEnumerable<T> BreadthFirstSearch()
+        {
+            if (Root is null) return null;
+            else
+            {
+                //Create queue
+                Queues<Node> breadthTraversal = new Queues<Node>();
+                breadthTraversal.Enqueue(Root);
+               List<T> result = new List<T>();
+
+                while(!breadthTraversal.IsEmpty())
+                {
+                    var node = breadthTraversal.Dequeue();
+                    
+                    
+                }
+
+            }
+
         }
 
 
