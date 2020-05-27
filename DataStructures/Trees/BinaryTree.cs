@@ -123,6 +123,25 @@ namespace DataStructures.Trees
 
         }
 
+        public IEnumerable<T> GetMaxValue()
+         
+        {
+            if (Root == null)
+            {
+               yield break;
+            }
+            else
+            {
+                Node node = Root;
+                while (node.Right != null)
+                {
+                    node = node.Right;
+                }
+
+                yield return node.Value;
+            }
+        }
+
 
 
 

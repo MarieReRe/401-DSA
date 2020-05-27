@@ -12,13 +12,7 @@ namespace DataStructures.Trees
 
     public class BinarySearchTree<T> : BinaryTree<T> where T : IComparable<T>
     {
-
-
-       
-
-
-        // ADD METHOD
-
+                                      // ADD METHOD
         public void Add(T valueToBeAdded)
         {
 
@@ -66,8 +60,7 @@ namespace DataStructures.Trees
         public bool Contains(Node root, T value)
         {
 
-
-            while(root != null)
+            while (root != null)
             {
                 if (root.Value.Equals(value)) return true;
                 else if (root.Value.CompareTo(value) > 0)
@@ -75,18 +68,8 @@ namespace DataStructures.Trees
                     return Contains(root.Left, value);
                 }
                 else return Contains(root.Right, value);
-
             }
             return false;
-
-
-
-
-           
-
-          
-
         }
-      
     }
 }
