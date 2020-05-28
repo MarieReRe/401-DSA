@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
 using System.Text;
-
+using System.Transactions;
 
 namespace DataStructures.Trees
 {
@@ -104,17 +104,30 @@ namespace DataStructures.Trees
 
         public IEnumerable<T> BreadthFirstSearch()
         {
-            if (Root is null) return null;
+            if (Root is null) yield break;
             else
             {
                 //Create queue
                 Queues<Node> breadthTraversal = new Queues<Node>();
                 breadthTraversal.Enqueue(Root);
-               List<T> result = new List<T>();
 
+                // check if tree is empty
                 while(!breadthTraversal.IsEmpty())
                 {
-                    var node = breadthTraversal.Dequeue();
+                    //dequeue root first
+                    var front = breadthTraversal.Dequeue();
+                    yield return front.Value;
+
+
+                    //move from left to right
+                    if(front.Left != null)
+                    {
+                        breadthTraversal.Enqueue(front.Left);
+                    }
+                    if(front.Right != null)
+                    {
+                        breadthTraversal.Enqueue(front.Right);
+                    }
                     
                     
                 }
@@ -128,18 +141,26 @@ namespace DataStructures.Trees
         {
             if (Root == null)
             {
-               yield break;
+                throw new Exception("Root is Null");
             }
-            else
+     
+            Queues<Node> nodeQueue = new Queues<Node>();
+               T max = Root.Value;
+            Node current = nodeQueue.Dequeue();
+            if(current.Value.CompareTo(max) > 0)
             {
-                Node node = Root;
-                while (node.Right != null)
-                {
-                    node = node.Right;
-                }
-
-                yield return node.Value;
+                max = current.Value;
             }
+              if(current.Left != null)
+              {
+                nodeQueue.Enqueue(current.Left);
+              }
+              if(current.Right != null)
+              {
+                nodeQueue.Enqueue(current.Right);
+              }
+
+            yield return max;
         }
 
 

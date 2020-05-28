@@ -172,5 +172,24 @@ namespace DataStructuresTests
             Assert.Contains(30, actual);
             
         }
+        /*----------------------------------------------MAX VAL TESTS-------------------------------------------------*/
+        [Fact]
+        public void CanGetMaxValue()
+        {
+            BinaryTree<int> tree = new BinaryTree<int>();
+            List<int> values = new List<int>()
+            {
+                -5, 12, 0, 19, 3, 17
+            };
+
+            foreach (int value in values)
+            {
+                tree.Add(value);
+            }
+
+            int result = tree.GetMaxValue();
+
+            Assert.Equal(19, result);
+        }
     }
 }
