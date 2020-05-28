@@ -137,12 +137,12 @@ namespace DataStructures.Trees
         }
 
         public IEnumerable<T> GetMaxValue()
-         
+         // Short way = return InOrder().Max();
+         // reduce
+         // return InOrder().Aggregate(max,next) => max > next ? max : next);
         {
-            if (Root == null)
-            {
-                throw new Exception("Root is Null");
-            }
+            if (Root == null) throw new Exception("Root is Null");
+            
      
             Queues<Node> nodeQueue = new Queues<Node>();
                T max = Root.Value;
@@ -151,14 +151,10 @@ namespace DataStructures.Trees
             {
                 max = current.Value;
             }
-              if(current.Left != null)
-              {
-                nodeQueue.Enqueue(current.Left);
-              }
-              if(current.Right != null)
-              {
-                nodeQueue.Enqueue(current.Right);
-              }
+              if(current.Left != null) nodeQueue.Enqueue(current.Left);
+            
+              if(current.Right != null) nodeQueue.Enqueue(current.Right);
+              
 
             yield return max;
         }
