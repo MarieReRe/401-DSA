@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
 using System.Text;
+using System.Transactions;
 
 namespace DataStructures.Trees
 {
@@ -16,10 +17,9 @@ namespace DataStructures.Trees
      * https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.addrange?view=netcore-3.1
      */
 
-   
+  
     public class BinaryTree<T> where T : IComparable<T>
     {
-
         public class Node
         {
             public Node Left { get; set; }
@@ -29,6 +29,7 @@ namespace DataStructures.Trees
             public Node Root { get; set; }
 
         }
+
 
 
         public Node Root;
@@ -45,11 +46,9 @@ namespace DataStructures.Trees
         public IEnumerable<T> PreOrder(Node Root)
         {
             if (Root is null) yield break;
-           yield return Root.Value;
-            if (Root != null)
-            {
 
-               
+           yield return Root.Value;
+
                 foreach(T item in PreOrder(Root.Left))
                 {
                     yield return item;
@@ -58,9 +57,7 @@ namespace DataStructures.Trees
                 {
                     yield return item;
                 }
-
-            }
-          
+ 
         }
 
 
@@ -103,6 +100,63 @@ namespace DataStructures.Trees
                 yield return Root.Value;
 
             }
+        }
+
+        public IEnumerable<T> BreadthFirstSearch()
+        {
+            if (Root is null) yield break;
+            else
+            {
+                //Create queue
+                Queues<Node> breadthTraversal = new Queues<Node>();
+                breadthTraversal.Enqueue(Root);
+
+                // check if tree is empty
+                while(!breadthTraversal.IsEmpty())
+                {
+                    //dequeue root first
+                    var front = breadthTraversal.Dequeue();
+                    yield return front.Value;
+
+
+                    //move from left to right
+                    if(front.Left != null)
+                    {
+                        breadthTraversal.Enqueue(front.Left);
+                    }
+                    if(front.Right != null)
+                    {
+                        breadthTraversal.Enqueue(front.Right);
+                    }
+                    
+                    
+                }
+
+            }
+
+        }
+
+        public IEnumerable<T> GetMaxValue()
+         // Short way = return InOrder().Max();
+         // reduce
+         // return InOrder().Aggregate(max,next) => max > next ? max : next);
+        {
+            if (Root == null) throw new Exception("Root is Null");
+            
+     
+            Queues<Node> nodeQueue = new Queues<Node>();
+               T max = Root.Value;
+            Node current = nodeQueue.Dequeue();
+            if(current.Value.CompareTo(max) > 0)
+            {
+                max = current.Value;
+            }
+              if(current.Left != null) nodeQueue.Enqueue(current.Left);
+            
+              if(current.Right != null) nodeQueue.Enqueue(current.Right);
+              
+
+            yield return max;
         }
 
 

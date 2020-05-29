@@ -14,7 +14,7 @@ namespace DataStructuresTests
      __________ [x] 3. Can successfully add a left child and right child to a                single root node
     __________  [x] 4. Can successfully return a collection from a preorder                   traversal
       __________ [x] 5.Can successfully return a collection from an inorder                 traversal
-      __________ [] 6. Can successfully return a collection from a postorder               traversal _____________________________________________*/
+      __________ [x] 6. Can successfully return a collection from a postorder               traversal _____________________________________________*/
     public class BinarySearchTreeTesting
     {
         [Fact]
@@ -169,8 +169,27 @@ namespace DataStructuresTests
             IEnumerable<int> actual = newTree.PreOrder(newTree.ReturnRoot());
 
 
-            Assert.Contains(6, actual);
+            Assert.Contains(30, actual);
+            
+        }
+        /*----------------------------------------------MAX VAL TESTS-------------------------------------------------*/
+        [Fact]
+        public void CanGetMaxValue()
+        {
+            BinaryTree<int> tree = new BinaryTree<int>();
+            List<int> values = new List<int>()
+            {
+                -5, 12, 0, 19, 3, 17
+            };
 
+            foreach (int value in values)
+            {
+                tree.Add(value);
+            }
+
+            int result = tree.GetMaxValue();
+
+            Assert.Equal(19, result);
         }
     }
 }
