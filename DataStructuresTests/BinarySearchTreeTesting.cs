@@ -173,23 +173,17 @@ namespace DataStructuresTests
             
         }
         /*----------------------------------------------MAX VAL TESTS-------------------------------------------------*/
+
         [Fact]
-        public void CanGetMaxValue()
+        public void Can_return_empty_if_empty()
         {
-            BinaryTree<int> tree = new BinaryTree<int>();
-            List<int> values = new List<int>()
-            {
-                -5, 12, 0, 19, 3, 17
-            };
+            // Arrange
+            BinarySearchTree<int> newTree = new BinarySearchTree<int>();
 
-            foreach (int value in values)
-            {
-                tree.Add(value);
-            }
 
-            int result = tree.GetMaxValue();
-
-            Assert.Equal(19, result);
+            // Act & Assert
+            Assert.Null(newTree.Root);
         }
+  
     }
 }
