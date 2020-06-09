@@ -21,8 +21,8 @@ namespace Challenges.Sorting
                  // move the current item back one position in the array.
                  // This loop will never run for the very first unsorted item at index 0.
 
-               while (j >= 0 && temp < arr [j] )
-                {
+              for (j >= 0 && temp < arr [j] )
+              {
                    
                     arr[j + 1] = arr[j];
 
@@ -31,7 +31,7 @@ namespace Challenges.Sorting
                     j = j - 1;
                     arr[j + 1] = temp;
     
-                }
+              }
                    
 
                 }
