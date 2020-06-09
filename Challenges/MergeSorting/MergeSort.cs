@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Challenges.MergeSorting
 {
-    class MergeSort
+   public class MergeSort
     {
     }
 }
