@@ -25,11 +25,11 @@ namespace Challenges.Sorting
               {
                    
                     arr[j + 1] = arr[j];
-
+                    arr[j + 1] = temp;
                     
                 //This while loop shifts items to the right in the sorted subset of the array
                     j = j - 1;
-                    arr[j + 1] = temp;
+                    
     
               }
                    
