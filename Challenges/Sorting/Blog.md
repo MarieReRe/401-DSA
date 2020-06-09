@@ -17,9 +17,13 @@ First, we will assume that the first item is sorted. Then we will find the next 
 
 
 ## Test Cases
+
 Sort a unique array
+
 sort same values
+
 sort a reversed array
+
 sort an array that is nearly sorted
 
 ## Some extra resources to learn more about the Insertion Sort
