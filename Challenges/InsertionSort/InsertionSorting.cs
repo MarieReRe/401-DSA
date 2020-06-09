@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Challenges.Sorting
+namespace Challenges.InsertionSorting
 {
     public class InsertionSorting
     {
