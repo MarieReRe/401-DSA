@@ -1,6 +1,6 @@
 ﻿
 using DataStructures.HashTable;
-using System.Collections;
+
 using Xunit;
 
 namespace DataStructuresTests
@@ -19,7 +19,7 @@ namespace DataStructuresTests
         [Fact]
         public void CollisionHandling()
         {
-            Hashtable testHT = new Hashtable(1);
+            HashTable testHT = new HashTable(1);
 
             testHT.Add("Ice Cream", "chocolate");
             testHT.Add("Topping", "sprinkles");
@@ -29,7 +29,7 @@ namespace DataStructuresTests
         [Fact]
         public void ContainsNoKeys()
         {
-            Hashtable testHT = new Hashtable(5);
+            HashTable testHT = new HashTable(5);
             Assert.False(testHT.Contains("Marie"));
         }
 
@@ -49,7 +49,7 @@ namespace DataStructuresTests
         [Fact]
         public void ContainsMultiple()
         {
-            Hashtable testHT = new Hashtable(5);
+            HashTable testHT = new HashTable(5);
             testHT.Add("Spaghetti", "1");
             testHT.Add("Ravioli", "3");
             testHT.Add("strozzapreti", "11");
@@ -62,7 +62,7 @@ namespace DataStructuresTests
         [Fact]
         public void GetOneValue()
         {
-            Hashtable testHT = new Hashtable(5);
+            HashTable testHT = new HashTable(5);
             testHT.Add("C#", "1");
             Assert.Equal("1", testHT.Get("C#"));
         }
