@@ -1,8 +1,6 @@
-﻿using DataStructures.Hash_Table;
-using System;
+﻿
+using DataStructures.HashTable;
 using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace DataStructuresTests
@@ -60,6 +58,17 @@ namespace DataStructuresTests
             Assert.True(testHT.Contains("strozzapreti"));
 
         }
+
+        [Fact]
+        public void GetOneValue()
+        {
+            Hashtable testHT = new Hashtable(5);
+            testHT.Add("C#", "1");
+            Assert.Equal("1", testHT.Get("C#"));
+        }
+
+
+
     }
 
 

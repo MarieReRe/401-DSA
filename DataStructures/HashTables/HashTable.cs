@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructures.Hash_Table
+namespace DataStructures.HashTable
 {
 
     // Key value look-up
@@ -73,11 +73,47 @@ namespace DataStructures.Hash_Table
         }
 
         // Get
+        public string Get(string key)
+        {
+            //this is the default for when the string is not found
+            string returnedText = $"Cannot find key \"{key}\"";
+            int index = Hash(key);
+            //if empty return the default
+            if (HashTableNode[index] == null)
+            {
+
+                return returnedText;
+            }
+            //If the node list is not empty, check if the first node has the finding key. If yes, return the node's value.
+            if (HashTableNode[index] != null)
+            {
+                if (HashTableNode[index].Key == key)
+                {
+
+                    return HashTableNode[index].Value;
+                }
+                else
+                {
+                    // If not, while the node.Next is not null, keep looping through the node list and look for the finding key. If finds it, return that node's value.
+                    Node current = HashTableNode[index];
+                    while (current.Next != null)
+                    {
+                        current = current.Next;
+                        if (current.Key == key)
+                        {
+
+                            return current.Value;
+                        }
+                    }
+                }
+            }
+            // If not, return the default string.
+            return returnedText;
+        }
 
 
-
-        //Contains
-        public bool Contains(string key)
+            //Contains
+            public bool Contains(string key)
         {
             int index = Hash(key);
             if (HashTableNode[index] == null)
