@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DataStructures.GraphImplementation
@@ -15,6 +16,11 @@ namespace DataStructures.GraphImplementation
         //Add Node
         //Add Edge
         //GetNodes
+        public List<T> GetNodes()
+        {
+            if (Nodes.Keys.Count < 1) return null;
+            return Nodes.Keys.ToList();
+        }
         //GetNeighbors
         //Size
     }
