@@ -24,10 +24,10 @@ namespace DataStructuresTests
         public void EmptyGraphReturnsNull()
         {
             //arrange
-            Graph newGraph = new Graph();
+            Graph<int> newGraph = new Graph<int>();
             //Act
             //Assert
-            Assert.True(null);
+            Assert.Null(newGraph);
         }
     }
 }
