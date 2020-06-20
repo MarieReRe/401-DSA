@@ -113,7 +113,7 @@ namespace DataStructures.HashTable
 
 
             //Contains
-            public bool Contains(string key)
+        public bool Contains(string key)
         {
             int index = Hash(key);
             if (HashTableNode[index] == null)
@@ -135,5 +135,7 @@ namespace DataStructures.HashTable
                 return false;
             }
         }
+
+       
     }
 } 

@@ -22,9 +22,9 @@ namespace DataStructuresTests
             HashTable testHT = new HashTable(1);
 
             testHT.Add("Ice Cream", "chocolate");
-            testHT.Add("Topping", "sprinkles");
+            testHT.Add("Ice Cream", "sprinkles");
             Assert.True(testHT.Contains("Ice Cream"));
-            Assert.True(testHT.Contains("Topping"));
+            Assert.True(testHT.Contains("Ice Cream"));
         }
         [Fact]
         public void ContainsNoKeys()
@@ -67,7 +67,8 @@ namespace DataStructuresTests
             Assert.Equal("1", testHT.Get("C#"));
         }
 
-
+// NEW TESTY TESTS
+        
 
     }
 
