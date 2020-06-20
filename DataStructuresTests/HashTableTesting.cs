@@ -10,7 +10,7 @@ namespace DataStructuresTests
         [Fact]
         public void AddOneValue()
         {
-            HashTable testHT = new HashTable(15);
+            Hashtable testHT = new Hashtable(15);
            testHT.Add("Ice Cream","Vanilla Bean");
             Assert.True(testHT.Contains("Ice Cream"));
         }
@@ -19,7 +19,7 @@ namespace DataStructuresTests
         [Fact]
         public void CollisionHandling()
         {
-            HashTable testHT = new HashTable(1);
+            Hashtable testHT = new Hashtable(1);
 
             testHT.Add("Ice Cream", "chocolate");
             testHT.Add("Ice Cream", "sprinkles");
@@ -29,7 +29,7 @@ namespace DataStructuresTests
         [Fact]
         public void ContainsNoKeys()
         {
-            HashTable testHT = new HashTable(5);
+            Hashtable testHT = new Hashtable(5);
             Assert.False(testHT.Contains("Marie"));
         }
 
@@ -39,7 +39,7 @@ namespace DataStructuresTests
             string[] productID = { "1001", "2001", "1002", "2002", "3001", "4002", "5009" };
             string[] product = { "t-shirt", "dad cap", "cooler", "Ice Cream Cookbook", "pencil set", "note pad", "scooper" };
 
-            HashTable hashtable = new HashTable(productID.Length);
+            Hashtable hashtable = new Hashtable(productID.Length);
             for (int i = 0; i < productID.Length; i++)
             {
                 hashtable.Add(productID[i], product[i]);
@@ -49,7 +49,7 @@ namespace DataStructuresTests
         [Fact]
         public void ContainsMultiple()
         {
-            HashTable testHT = new HashTable(5);
+            Hashtable testHT = new Hashtable(5);
             testHT.Add("Spaghetti", "1");
             testHT.Add("Ravioli", "3");
             testHT.Add("strozzapreti", "11");
@@ -62,7 +62,7 @@ namespace DataStructuresTests
         [Fact]
         public void GetOneValue()
         {
-            HashTable testHT = new HashTable(5);
+            Hashtable testHT = new Hashtable(5);
             testHT.Add("C#", "1");
             Assert.Equal("1", testHT.Get("C#"));
         }
