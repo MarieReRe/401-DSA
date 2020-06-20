@@ -14,6 +14,13 @@ namespace DataStructures.GraphImplementation
             Nodes = new Dictionary<T, Dictionary<T, int>>();
         }
         //Add Node
+        public bool AddNode(T value)
+        {
+            if (Nodes.ContainsKey(value)) return false;
+
+            Nodes.Add(value, new Dictionary<T, int>());
+            return true;
+        }
         //Add Edge
         //GetNodes
         public List<T> GetNodes()

@@ -27,7 +27,7 @@ namespace DataStructuresTests
             Graph<int> newGraph = new Graph<int>();
             //Act
             //Assert
-            Assert.Null(newGraph);
+            Assert.Null(newGraph.GetNodes());
         }
     }
 }
