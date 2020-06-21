@@ -85,5 +85,17 @@ namespace DataStructuresTests
             graph.AddEdge(1, 10, 100);
             Assert.Equal(100, graph.GetNeighbors(1).GetValueOrDefault(10));
         }
+        [Fact]
+        public void CanGetSize()
+        {
+            Graph<int> newGraph = new Graph<int>();
+            newGraph.AddNode(5);
+            newGraph.AddNode(10);
+            newGraph.AddNode(15);
+            newGraph.AddNode(20);
+            newGraph.AddNode(25);
+
+            Assert.Equal(5, newGraph.Size());
+        }
     }
 }
