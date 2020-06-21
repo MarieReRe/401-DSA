@@ -16,7 +16,7 @@ namespace DataStructuresTests
                             [x] 4. All appropriate neighbors can be retrieved from the graph
                             [x] 5. Neighbors are returned with the weight between nodes included
                             [x] 6. The proper size is returned, representing the number of nodes in the graph
-                            [] 7. A graph with only one node and edge can be properly returned
+                            [x] 7. A graph with only one node and edge can be properly returned
                             [x] 8. An empty graph properly returns null
          
       -----------------------------------------------------------------------------------------------------------------------   */
