@@ -61,5 +61,9 @@ namespace DataStructures.GraphImplementation
             return Nodes[value];
         }
         //Size
+        public int Size()
+        {
+            return Nodes.Keys.Count;
+        }
     }
 }
