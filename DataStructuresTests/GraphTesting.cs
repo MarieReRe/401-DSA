@@ -17,7 +17,7 @@ namespace DataStructuresTests
                             [] 5. Neighbors are returned with the weight between nodes included
                             [] 6. The proper size is returned, representing the number of nodes in the graph
                             [] 7. A graph with only one node and edge can be properly returned
-                            [] 8. An empty graph properly returns null
+                            [x] 8. An empty graph properly returns null
          
       -----------------------------------------------------------------------------------------------------------------------   */
         [Fact]
@@ -28,6 +28,16 @@ namespace DataStructuresTests
             //Act
             //Assert
             Assert.Null(newGraph.GetNodes());
+        }
+        [Fact]
+        public void CanAddNodeToGraph()
+        {
+            //Arrange
+            Graph<int> newGraph = new Graph<int>();
+            newGraph.AddNode(3);
+
+            //Assert
+            Assert.Contains(3, newGraph.GetNodes());
         }
     }
 }
