@@ -14,8 +14,8 @@ namespace DataStructuresTests
                             [x] 2. An edge can be successfully added to the graph
                             [x] 3. A collection of all nodes can be properly retrieved from the graph
                             [x] 4. All appropriate neighbors can be retrieved from the graph
-                            [] 5. Neighbors are returned with the weight between nodes included
-                            [] 6. The proper size is returned, representing the number of nodes in the graph
+                            [x] 5. Neighbors are returned with the weight between nodes included
+                            [x] 6. The proper size is returned, representing the number of nodes in the graph
                             [] 7. A graph with only one node and edge can be properly returned
                             [x] 8. An empty graph properly returns null
          
@@ -96,6 +96,14 @@ namespace DataStructuresTests
             newGraph.AddNode(25);
 
             Assert.Equal(5, newGraph.Size());
+        }
+        [Fact]
+        public void CanAddEdgeWithSameNodeInGraphOfOneNode()
+        {
+            Graph<int> graph = new Graph<int>();
+            graph.AddNode(1);
+            graph.AddEdge(1, 1);
+            Assert.Single(graph.GetNeighbors(1));
         }
     }
 }
