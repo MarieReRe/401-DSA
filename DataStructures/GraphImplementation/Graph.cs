@@ -21,7 +21,14 @@ namespace DataStructures.GraphImplementation
             Nodes.Add(value, new Dictionary<T, int>());
             return true;
         }
-        //Add Edge
+        //Add Edge requirements- value of first node being connected, 
+        //value of second node being connected, 
+        //weight of edge defaulting at 1,
+        //directional path default is false
+        public bool AddEdge(T firstNodeValue, T secondNodeValue, int weight = 1, bool oneWay = false)
+        {
+            return true;
+        }
         //GetNodes
         public List<T> GetNodes()
         {
