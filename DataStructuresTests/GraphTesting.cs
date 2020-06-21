@@ -10,7 +10,7 @@ namespace DataStructuresTests
     {
 
         /* -------------------------------------------- GRAPH TESTING--------------------------------------------------------------
-                            [] 1. Node can be successfully added to the graph
+                            [x] 1. Node can be successfully added to the graph
                             [] 2. An edge can be successfully added to the graph
                             [] 3. A collection of all nodes can be properly retrieved from the graph
                             [] 4. All appropriate neighbors can be retrieved from the graph
@@ -38,6 +38,18 @@ namespace DataStructuresTests
 
             //Assert
             Assert.Contains(3, newGraph.GetNodes());
+        }
+        [Fact]
+        public void EdgeCanBeAdded()
+        {
+            Graph<int> newGraph = new Graph<int>();
+            newGraph.AddNode(3);
+            newGraph.AddNode(6);
+            newGraph.AddNode(9);
+            newGraph.AddEdge(3,6);
+
+            Assert.True(newGraph);
+
         }
     }
 }
