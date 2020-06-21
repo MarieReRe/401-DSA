@@ -7,7 +7,7 @@ namespace DataStructures.HashTable
 
     // Key value look-up
     //we want to store the date in an array
-    public class HashTable
+    public class Hashtable
     {
         // First We need to set up our Hash Table. Our Hash table will use a node
         public class Node
@@ -45,7 +45,7 @@ namespace DataStructures.HashTable
         public Node[] HashTableNode { get; set; }
 
         //Next, we set up the HT Constructor. This will set up the quantity for our buckets and set up the same amount of node arrays to match the buckets!
-        public HashTable(int buckets)
+        public Hashtable(int buckets)
         {
             Buckets = buckets;
             HashTableNode = new Node[buckets];
@@ -113,7 +113,7 @@ namespace DataStructures.HashTable
 
 
             //Contains
-            public bool Contains(string key)
+        public bool Contains(string key)
         {
             int index = Hash(key);
             if (HashTableNode[index] == null)
@@ -135,5 +135,7 @@ namespace DataStructures.HashTable
                 return false;
             }
         }
+
+       
     }
 } 
