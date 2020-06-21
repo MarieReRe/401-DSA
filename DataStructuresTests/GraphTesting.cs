@@ -11,8 +11,8 @@ namespace DataStructuresTests
 
         /* -------------------------------------------- GRAPH TESTING--------------------------------------------------------------
                             [x] 1. Node can be successfully added to the graph
-                            [] 2. An edge can be successfully added to the graph
-                            [] 3. A collection of all nodes can be properly retrieved from the graph
+                            [x] 2. An edge can be successfully added to the graph
+                            [x] 3. A collection of all nodes can be properly retrieved from the graph
                             [] 4. All appropriate neighbors can be retrieved from the graph
                             [] 5. Neighbors are returned with the weight between nodes included
                             [] 6. The proper size is returned, representing the number of nodes in the graph
@@ -50,6 +50,17 @@ namespace DataStructuresTests
 
             Assert.True(newGraph.GetNeighbors(3).ContainsKey(6) );
 
+        }
+        [Fact]
+        public void CanGetAllNodes()
+        {
+            List<int> expected = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            Graph<int> graph = new Graph<int>();
+            foreach (int i in expected)
+            {
+                graph.AddNode(i);
+            }
+            Assert.Equal(expected, graph.GetNodes());
         }
     }
 }
