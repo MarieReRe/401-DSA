@@ -27,6 +27,8 @@ namespace DataStructures.GraphImplementation
         //directional path default is false
         public bool AddEdge(T firstNodeValue, T secondNodeValue, int weight = 1, bool oneWay = false)
         {
+            //if the edge does not contain either value return false
+            if (!Nodes.ContainsKey(firstNodeValue) || !Nodes.ContainsKey(secondNodeValue)) return false;
             return true;
         }
         //GetNodes
