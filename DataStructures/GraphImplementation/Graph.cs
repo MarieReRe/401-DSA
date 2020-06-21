@@ -7,7 +7,7 @@ namespace DataStructures.GraphImplementation
 {
    public class Graph<T>
     {
-        readonly Dictionary<T, Dictionary<T, int>> Nodes;
+        Dictionary<T, Dictionary<T, int>> Nodes;
         // First we need to create an empty graph 
         public Graph()
         {
@@ -29,6 +29,22 @@ namespace DataStructures.GraphImplementation
         {
             //if the edge does not contain either value return false
             if (!Nodes.ContainsKey(firstNodeValue) || !Nodes.ContainsKey(secondNodeValue)) return false;
+            //set up the nodes
+            // https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.collectionextensions.getvalueordefault?view=netcore-3.1
+            Dictionary<T, int> nodeOne = Nodes[firstNodeValue];
+            Dictionary<T, int> nodeTwo = Nodes[secondNodeValue];
+
+            //Check if it contains the key
+            if (nodeOne.ContainsKey(firstNodeValue)) return false;
+
+            if (!oneWay && !firstNodeValue.Equals(secondNodeValue))
+            {
+                if (nodeTwo.ContainsKey(firstNodeValue)) return false;
+                nodeTwo.Add(firstNodeValue, weight);
+            }
+
+
+            nodeOne.Add(secondNodeValue, weight);
             return true;
         }
         //GetNodes
@@ -38,6 +54,12 @@ namespace DataStructures.GraphImplementation
             return Nodes.Keys.ToList();
         }
         //GetNeighbors
+        public Dictionary<T, int> GetNeighbors(T value)
+        {
+            if (!Nodes.ContainsKey(value)) return null;
+
+            return Nodes[value];
+        }
         //Size
     }
 }

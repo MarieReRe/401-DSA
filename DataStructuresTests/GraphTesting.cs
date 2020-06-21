@@ -48,7 +48,7 @@ namespace DataStructuresTests
             newGraph.AddNode(9);
             newGraph.AddEdge(3,6);
 
-            Assert.True(newGraph);
+            Assert.True(newGraph.GetNeighbors(3).ContainsKey(6) );
 
         }
     }
