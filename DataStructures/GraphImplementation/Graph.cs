@@ -91,7 +91,19 @@ namespace DataStructures.GraphImplementation
                 //the we will traverse each neighbor node
                 foreach(T node in  neighbors)
                 {
-                    
+                    //if the node has not been visited yet
+                    if (!visited.ContainsKey(node))
+                    {
+                        //change the boolean to true now that the nde is visited
+                        visited.Add(node, true);
+
+                        //Add the node to the output list
+                        output.Add(node);
+                        
+                        //enqueue the node
+                        breadthTraversal.Enqueue(Nodes[node].Keys.ToList()    
+                        );  
+                    }
                 }
             }
 
