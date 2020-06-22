@@ -105,5 +105,11 @@ namespace DataStructuresTests
             graph.AddEdge(1, 1);
             Assert.Single(graph.GetNeighbors(1));
         }
+        [Fact]
+        public void BreadthFirstOnEmptyGraphReturnsNull()
+        {
+            Graph<int> graph = new Graph<int>();
+            Assert.Null(graph.BreadthFirstTraversal(5));
+        }
     }
 }
