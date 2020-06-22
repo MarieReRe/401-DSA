@@ -80,7 +80,15 @@ namespace DataStructures.GraphImplementation
             //Since we have an input we will need an list of the outputs. These are the nodes we have visited. 
              List<T> output = new List<T> { value };
             //creation of the queue we will need
-             Queue<List<T>> breadth = new Queue<List<T>>();
+             Queue<List<T>> breadthTraversal = new Queue<List<T>>();
+
+            //enqueue the nodes to the list
+            breadthTraversal.Enqueue(Nodes[value].Keys.ToList());
+
+            
+            }
+
+
       
 
         }
