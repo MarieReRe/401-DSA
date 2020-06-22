@@ -77,6 +77,9 @@ namespace DataStructures.GraphImplementation
               //we will then add the value 
             visited.Add(value, true);
 
+            //Since we have an input we will need an list of the outputs. These are the nodes we have visited. 
+             List<T> output = new List<T> { value };
+
       
 
         }
