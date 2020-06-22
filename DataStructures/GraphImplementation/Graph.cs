@@ -86,7 +86,7 @@ namespace DataStructures.GraphImplementation
             breadthTraversal.Enqueue(Nodes[value].Keys.ToList());
 
             //next we need a while loop
-            while(breadthTraversal.Dequeue(out List<T> neighbors))
+            while(breadthTraversal.Dequeue())
             {
                 //the we will traverse each neighbor node
                 foreach(T node in  neighbors)
