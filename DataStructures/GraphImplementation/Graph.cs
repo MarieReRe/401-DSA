@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace DataStructures.GraphImplementation
 {
-   public class Graph<T>
+    public class Graph<T>
     {
         Dictionary<T, Dictionary<T, int>> Nodes;
         // First we need to create an empty graph 
@@ -70,7 +71,37 @@ namespace DataStructures.GraphImplementation
         //T value is the Root node that the search will start with
         public List<T> BreadthFirstTraversal(T value)
         {
-        
+            //check if the root contains the key
+            if (!Nodes.ContainsKey(value)) return null;
+            //Now we will create a boolean to check if we have visited the node
+            Dictionary<T, bool> visited = new Dictionary<T, bool>();
+            visited.Add(value, true);
+            //Since we have an input we will need an list of the outputs. These are the nodes we have visited. 
+            List<T> output = new List<T> { value };
+            //creation of the queue we will need
+            Queue<T> breadthTraversal = new Queue<T>();
+             //next we need a while loop to check if the node is visited or not
+            while (breadthTraversal.Count > 0 )
+            {
+               var currentValue = breadthTraversal.Dequeue();
+                //if it has already been visited ignore and contiue
+                if (visited.ContainsKey(currentValue))
+                {
+                    continue;
+                }
+                //change the boolean to true now that the node is visited
+                visited.Add(currentValue, true);
+                //Add the node to the output list
+                output.Add(currentValue);
+                //the we will traverse each neighbor node
+                //enqueue the neighbors
+                foreach (var edge in Nodes[value])
+                {
+                    breadthTraversal.Enqueue(edge.Key);
+                }
+            }
+            //Finally what we all have been waiting for the output of the traversal!
+            return output;
         }
     }
 }
