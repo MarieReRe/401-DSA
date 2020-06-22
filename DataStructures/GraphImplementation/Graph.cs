@@ -11,6 +11,7 @@ namespace DataStructures.GraphImplementation
         // First we need to create an empty graph 
         public Graph()
         {
+            //how I am storing the edges
             Nodes = new Dictionary<T, Dictionary<T, int>>();
         }
         //Add Node
@@ -64,6 +65,12 @@ namespace DataStructures.GraphImplementation
         public int Size()
         {
             return Nodes.Keys.Count;
+        }
+        //Breadth-First Search
+        //T value is the Root node that the search will start with
+        public List<T> BreadthFirstTraversal(T value)
+        {
+        
         }
     }
 }
