@@ -72,6 +72,8 @@ namespace DataStructures.GraphImplementation
         {
             //check if the root contains the key
             if(!Nodes.ContainsKey(value)) return null;
+                  //Now we will create a boolean to check if we have visited the node
+            Dictionary<T, bool> visited = new Dictionary<T, bool>();
       
 
         }
