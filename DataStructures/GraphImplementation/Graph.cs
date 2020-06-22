@@ -88,7 +88,11 @@ namespace DataStructures.GraphImplementation
             //next we need a while loop
             while(breadthTraversal.Dequeue(out List<T> neighbors))
             {
-               
+                //the we will traverse each neighbor node
+                foreach(T node in  neighbors)
+                {
+                    
+                }
             }
 
 
