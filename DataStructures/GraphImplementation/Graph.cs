@@ -89,7 +89,7 @@ namespace DataStructures.GraphImplementation
             while(breadthTraversal.Dequeue())
             {
                 //the we will traverse each neighbor node
-                foreach(T node in  neighbors)
+                foreach(T node in  GetNeighbors)
                 {
                     //if the node has not been visited yet
                     if (!visited.ContainsKey(node))
