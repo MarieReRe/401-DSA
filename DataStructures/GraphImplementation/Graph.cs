@@ -107,8 +107,8 @@ namespace DataStructures.GraphImplementation
                 }
             }
 
-
-      
+        //Finally what we all have been waiting for the output of the traversal!
+        return output;
 
         }
     }
