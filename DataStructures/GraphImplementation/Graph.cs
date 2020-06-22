@@ -70,7 +70,10 @@ namespace DataStructures.GraphImplementation
         //T value is the Root node that the search will start with
         public List<T> BreadthFirstTraversal(T value)
         {
-        
+            //check if the root contains the key
+            if(!Nodes.ContainsKey(value)) return null;
+      
+
         }
     }
 }
