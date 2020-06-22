@@ -94,7 +94,7 @@ namespace DataStructures.GraphImplementation
                     //if the node has not been visited yet
                     if (!visited.ContainsKey(node))
                     {
-                        //change the boolean to true now that the nde is visited
+                        //change the boolean to true now that the node is visited
                         visited.Add(node, true);
 
                         //Add the node to the output list
