@@ -74,6 +74,9 @@ namespace DataStructures.GraphImplementation
             if(!Nodes.ContainsKey(value)) return null;
                   //Now we will create a boolean to check if we have visited the node
             Dictionary<T, bool> visited = new Dictionary<T, bool>();
+              //we will then add the value 
+            visited.Add(value, true);
+
       
 
         }
