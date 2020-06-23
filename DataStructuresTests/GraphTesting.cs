@@ -105,11 +105,54 @@ namespace DataStructuresTests
             graph.AddEdge(1, 1);
             Assert.Single(graph.GetNeighbors(1));
         }
+
+        /*_________________________________________________BREADTH FIRST TRAVERSAL TESTING ________________________________________ ______________________________________________________________________________________________________________________________*/
+
         [Fact]
         public void BreadthFirstOnEmptyGraphReturnsNull()
         {
             Graph<int> graph = new Graph<int>();
             Assert.Null(graph.BreadthFirstTraversal(5));
+        }
+        [Fact]
+        public void CanPerformBreadthFirst()
+        {
+            Graph<int> graph = new Graph<int>();
+            for (int i = 1; i < 8; i++)
+            {
+                graph.AddNode(i);
+            }
+
+            graph.AddEdge(1, 2);
+            graph.AddEdge(2, 3);
+            graph.AddEdge(1, 4);
+            graph.AddEdge(1, 5);
+            graph.AddEdge(2, 5);
+            graph.AddEdge(5, 6);
+            graph.AddEdge(4, 7);
+            graph.AddEdge(5, 7);
+
+            List<int> expected = new List<int> { 1, 2, 4, 5, 3, 7, 6 };
+            Assert.Equal(expected, graph.BreadthFirstTraversal(1));
+        }
+        [Fact]
+        public void BreadthFirstIgnoresIslands()
+        {
+            Graph<int> graph = new Graph<int>();
+            for (int i = 1; i < 8; i++)
+            {
+                graph.AddNode(i);
+            }
+
+            graph.AddEdge(1, 2);
+            graph.AddEdge(2, 3);
+            graph.AddEdge(1, 5);
+            graph.AddEdge(2, 5);
+            graph.AddEdge(5, 6);
+            graph.AddEdge(5, 7);
+
+            List<int> expected = new List<int> { 1, 2, 5, 3, 6, 7 };
+            Assert.Equal(expected, graph.BreadthFirstTraversal(1));
         }
     }
 }
