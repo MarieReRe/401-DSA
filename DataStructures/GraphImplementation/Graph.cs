@@ -79,25 +79,34 @@ namespace DataStructures.GraphImplementation
             //Since we have an input we will need an list of the outputs. These are the nodes we have visited. 
             List<T> output = new List<T> { value };
             //creation of the queue we will need
-            Queue<T> breadthTraversal = new Queue<T>();
-             //next we need a while loop to check if the node is visited or not
-            while (breadthTraversal.Count > 0 )
+            Queue<List<T>> breadthTraversal = new Queue<List<T>>();
+            breadthTraversal.Enqueue(
+                Nodes.GetValueOrDefault(value).Keys.ToList()
+            );
+            //next we need a while loop to check if the node is visited or not
+            while (breadthTraversal.TryDequeue(out List<T> neighbors))
             {
-               var currentValue = breadthTraversal.Dequeue();
-                //if it has already been visited ignore and contiue
-                if (visited.ContainsKey(currentValue))
+                foreach (T node in neighbors)
                 {
-                    continue;
-                }
-                //change the boolean to true now that the node is visited
-                visited.Add(currentValue, true);
-                //Add the node to the output list
-                output.Add(currentValue);
-                //the we will traverse each neighbor node
-                //enqueue the neighbors
-                foreach (var edge in Nodes[value])
-                {
-                    breadthTraversal.Enqueue(edge.Key);
+                    if (!visited.ContainsKey(node))
+                    {
+                        visited.Add(node, true);
+                        output.Add(node);
+                        breadthTraversal.Enqueue(
+                            Nodes.GetValueOrDefault(node).Keys.ToList()
+                        );
+                     
+
+                        //change the boolean to true now that the node is visited
+
+                        //Add the node to the output list
+
+                        //the we will traverse each neighbor node
+                        //enqueue the neighbors
+
+                    }
+                    
+               
                 }
             }
             //Finally what we all have been waiting for the output of the traversal!
