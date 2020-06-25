@@ -40,6 +40,12 @@ namespace DataStructures
             totalNodes = PreOrder(tree.Root, traversal);
             return traversal;
         }
+
+        public IEnumerable<int> BreadthFirst()
+        {
+            throw new NotImplementedException();
+        }
+
         // we will count the nodes on the tree
         public int count = 0;
         public int PreOrder(Node<object> node, List<object> traversal)

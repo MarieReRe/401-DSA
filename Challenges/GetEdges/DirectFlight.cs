@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Challenges.GetEdges
 {
-    class DirectFlight
+    public class DirectFlight
     {
+
     }
 }
